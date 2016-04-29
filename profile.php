@@ -13,6 +13,7 @@ include_once('navbar.php');
     <?php echo $_SESSION['first_name']; ?>
     <?php echo $_SESSION['last_name']; ?>
     <?php echo $_SESSION['email']; ?>
+    <!-- User information given in account making -->
 </div>
 <script src="scripts.js"></script>
 <div id="description">
