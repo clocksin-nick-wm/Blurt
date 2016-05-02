@@ -16,18 +16,23 @@ if(isset($_POST['submit'])) {
         $data = $stmt -> fetchAll();
         if (count($data) == 0) {
             // Inserts data from posts into the database users
-            $query = "INSERT INTO users (first_name, last_name, email, username, password) VALUES (0, ':first_name', ':last_name', ':email', ':username', SHA(':password'))";
+            $query = "INSERT INTO users (first_name, last_name, email, username, password) VALUES (:first_name, :last_name, :email, :username, SHA(:password1))";
             $stmt = $dbh->prepare($query);
-            $stmt->execute(array(
+            $result = $stmt->execute(array(
                 'first_name' => $first_name,
                 'last_name' => $last_name,
                 'email' => $email,
                 'username' => $username,
-                'password' => $password1
+                'password1' => $password1
             ));
-            // If successful user will see this echo
-            echo '<p>Thanks for joining the community ' . $_POST['first_name'] . ' enjoy this site. Click here to <a href="login.php">login</a></p>';
-            exit ();
+
+            if($result) {
+                // If successful user will see this echo
+                echo '<p>Thanks for joining the community ' . $_POST['first_name'] . ' enjoy this site. Click here to <a href="login.php">login</a></p>';
+                exit ();
+            }else{
+                print_r($stmt->errorInfo());
+            }
         }
         if ($password1 != $password2) {
             //If passwords do not match error message will show and erase user data
