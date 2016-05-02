@@ -1,4 +1,5 @@
 <?php
+    $pagetitle = 'Sign Up';
     $dbh = new PDO('mysql:host=localhost;dbname=blurtdb;', 'root', 'root');
 if(isset($_POST['submit'])) {
     // Variables used throughout to call from the post
@@ -56,7 +57,7 @@ if(isset($_POST['submit'])) {
 <!DOCTYPE html>
     <html>
 <head>
-    <title>Blurt</title>
+    <title>Blurt <?php echo $pagetitle ?></title>
 </head>
 <body>
     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
