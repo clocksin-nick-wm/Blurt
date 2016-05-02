@@ -3,6 +3,6 @@ function prompt1(){
     if (bio1.length < 500){
         document.getElementById("bio1").innerHTML = bio1;
     } else{
-        document.getElementById("bio1").innerHTML = "Too long, type something shorter. Please.";
+        document.getElementById("bio1").innerHTML = "Too long of a description type something shorter, please.";
     }
 }
