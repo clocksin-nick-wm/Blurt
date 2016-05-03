@@ -1,16 +1,18 @@
 <?php
 $pagetitle = 'Login';
-$dbh = new PDO('mysql:host=localhost;dbname=blurtdb', 'root', 'root');
+session_start();
+
 if(!isset($_SESSION['user_id'])) {
-    if (isset($_POST['submut'])) {
+    if (isset($_POST['submit'])) {
         $username = trim($_POST['username']);
         $password = trim($_POST['password']);
         if(!empty($username) && !empty($password)) {
-            $query = "SELECT userid, username FROM users WHERE username = $username AND  password = SHA(:password)";
+            $dbh = new PDO('mysql:host=localhost;dbname=blurtdb', 'root', 'root');
+            $query = "SELECT username, password FROM users WHERE username = :username AND  password = SHA(:password)";
             $stmt = $dbh -> prepare($query);
             $stmt -> execute(array(
-               'username' => $username,
-                'password' => $password
+               ':username' => $username,
+                ':password' => $password
             ));
             $result = $stmt -> fetchAll();
             if(count($result) == 1 ){

@@ -47,7 +47,7 @@ if (isset($_POST['submit'])) {
 
     // Update the profile data in the database
     if (!$error) {
-        if (!empty($first_name) && !empty($last_name) && !empty($gender) && !empty($birthdate) && !empty($city) && !empty($state)) {
+        if (!empty($first_name) && !empty($last_name) && !empty($email) && !empty($description)) {
             // Only set the picture column if there is a new picture
             if (!empty($new_picture)) {
                 $query = "UPDATE users SET first_name = :first_name, last_name = :last_name, email = :email, " .
