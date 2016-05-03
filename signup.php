@@ -18,7 +18,7 @@ if(isset($_POST['submit'])) {
         if (count($data) == 0) {
             // Inserts data from posts into the database users
             $query = "INSERT INTO users (first_name, last_name, email, username, password) VALUES (:first_name, :last_name, :email, :username, SHA(:password1))";
-            $stmt = $dbh->prepare($query);
+             $stmt = $dbh->prepare($query);
             $result = $stmt->execute(array(
                 'first_name' => $first_name,
                 'last_name' => $last_name,
