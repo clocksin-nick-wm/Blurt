@@ -1,4 +1,5 @@
 <?php
+include_once('authenticate.php');
 session_start();
 
 // If the session vars aren't set, try to set them with a cookie
