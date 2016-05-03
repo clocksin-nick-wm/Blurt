@@ -29,7 +29,7 @@ if (!isset($_SESSION['user_id'])) {
             <img width=60 src="Blurt.png">
         </div>
         <ul>
-            <li class="selected"> <i class="fa fa-newspaper-o "></i> <a href="index.php">News Feed</a> </li>
+            <li class="selected"> <i class="fa fa-newspaper-o "></i> <a href="view.php">Other profiles</a> </li>
             <li> <i class="fa fa-briefcase"></i> <a href="profile.php">Profile</a> </li>
             <li> <i class="fa fa-send"></i> <a href="logout.php">Log Out</a> </li>
         </ul>
