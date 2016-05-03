@@ -9,6 +9,7 @@ if (!isset($_SESSION['user_id'])) {
     }
 }
 ?>
+<!DOCTYPE html>
 <html>
 <head>
     <script src="jquery-2.1.4.min.js"></script>
