@@ -24,17 +24,12 @@ if (!isset($_SESSION['user_id'])) {
     <div class="navoverlay"></div>
     <div class="nav">
         <div id="logo-center" class="centered">
-            <img width=40 src="http://michaeltruong.ca/images/logo1.png">
+            <img width=60 src="Blurt.png">
         </div>
         <ul>
             <li class="selected"> <i class="fa fa-newspaper-o "></i> <a href="index.php">News Feed</a> </li>
             <li> <i class="fa fa-briefcase"></i> <a href="profile.php">Profile</a> </li>
-<<<<<<< HEAD
-            <li> <i class="fa fa-quote-right"></i><a href="">About</a> </li>
-            <li> <i class="fa fa-send"></i> <a href="">Contact</a> </li>
-=======
             <li> <i class="fa fa-send"></i> <a href="logout.php">Log Out</a> </li>
->>>>>>> 5f1e4ffa8c60f8cb623cf2e71df2376c52a05e2b
         </ul>
     </div>
 
