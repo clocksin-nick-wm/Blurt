@@ -1,4 +1,5 @@
 <?php
+include_once('authenticate.php');
 $dbh = new PDO('mysql:host=localhost;dbname=blurtdb', 'root', 'root');
 
 if (isset($_POST['submit'])) {
