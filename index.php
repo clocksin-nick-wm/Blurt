@@ -17,8 +17,8 @@
         </div>
         <ul>
             <li class="selected"> <i class="fa fa-newspaper-o "></i> <a href="http://codepen.io/YikesItsMikes/debug/bNMRKO/">News Feed</a> </li>
-            <li> <i class="fa fa-briefcase"></i> <a href="http://codepen.io/YikesItsMikes/debug/MYZRwO/">Portfolio</a> </li>
-            <li> <i class="fa fa-quote-right"></i><a href="http://michaeltruong.ca/about">  About</a> </li>
+            <li> <i class="fa fa-briefcase"></i> <a href="http://codepen.io/YikesItsMikes/debug/MYZRwO/">Profile</a> </li>
+            <li> <i class="fa fa-quote-right"></i><a href="http://michaeltruong.ca/about">About</a> </li>
             <li> <i class="fa fa-send"></i> <a href="http://michaeltruong.ca/contact">Contact</a> </li>
         </ul>
     </div>
