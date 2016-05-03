@@ -8,6 +8,7 @@ include_once('navbar.php');
     <!-- Whatever we decide to chose to have show on the page will work out on the tab putting the information wanted on this tab -->
 </head>
 <body>
+<?php echo $_SESSION['profile_pic']; ?>
 <div id="infoBox_Profile">
     <?php echo $_SESSION['username']; ?>
     <?php echo $_SESSION['first_name']; ?>
