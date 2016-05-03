@@ -16,8 +16,8 @@
             <img width=40 src="http://michaeltruong.ca/images/logo1.png">
         </div>
         <ul>
-            <li class="selected"> <i class="fa fa-newspaper-o "></i> <a href="http://codepen.io/YikesItsMikes/debug/bNMRKO/">News Feed</a> </li>
-            <li> <i class="fa fa-briefcase"></i> <a href="http://codepen.io/YikesItsMikes/debug/MYZRwO/">Profile</a> </li>
+            <li class="selected"> <i class="fa fa-newspaper-o "></i> <a href="index.php">News Feed</a> </li>
+            <li> <i class="fa fa-briefcase"></i> <a href="profile.php">Profile</a> </li>
             <li> <i class="fa fa-quote-right"></i><a href="http://michaeltruong.ca/about">About</a> </li>
             <li> <i class="fa fa-send"></i> <a href="http://michaeltruong.ca/contact">Contact</a> </li>
         </ul>
