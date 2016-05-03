@@ -1,13 +1,12 @@
 <?php
-session_start();
 
-$dbh = new PDO('mysql:host=localhost;dbname=blurtdb', 'root', 'root');
 
 if (isset($_POST['submit'])) {
     // Grab the profile data from the POST
     $first_name = trim($_POST['firstname']);
     $last_name = trim($_POST['lastname']);
     $email = trim($_POST['email']);
+    $description = trim($_POST['description']);
     $old_picture = trim($_POST['old_picture']);
     $new_picture = trim($_FILES['new_picture']['name']);
     $new_picture_type = $_FILES['new_picture']['type'];
@@ -64,6 +63,7 @@ if (isset($_POST['submit'])) {
                 'last_name' => $last_name,
                 'email' => $email,
                 'new_picture' => $new_picture,
+                'description' => $description,
                 'user_id' => $_SESSION['user_id']));
 
             // Confirm success with the user
@@ -86,7 +86,7 @@ if (isset($_POST['submit'])) {
         <label for="lastname">Last name:</label>
         <input type="text" id="lastname" name="lastname" value="<?php if (!empty($last_name)) echo $last_name; ?>"/><br/>
         <label for="email">Email:</label>
-        <input type="email" id="email"
+        <input type="email" id="email" value="<?php if(!empty($email))  echo $email; ?>">
         <input type="hidden" name="old_picture" value="<?php if (!empty($old_picture)) echo $old_picture; ?>"/>
         <label for="new_picture">Picture:</label>
         <input type="file" id="new_picture" name="new_picture"/>
@@ -94,7 +94,7 @@ if (isset($_POST['submit'])) {
             echo '<img class="profile" src="' . MM_UPLOADPATH . $old_picture . '" alt="Profile Picture" />';
         } ?>
         <label for="description">Description:</label>
-        <input type="text" id="description">
+        <input type="text" id="description" value="<?php if(!empty($description)) echo $description; ?>">
     </fieldset>
     <input type="submit" value="Save Profile" name="submit"/>
 </form>
