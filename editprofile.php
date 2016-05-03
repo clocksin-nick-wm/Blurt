@@ -1,5 +1,5 @@
 <?php
-
+$dbh = new PDO('mysql:host=localhost;dbname=blurtdb', 'root', 'root');
 
 if (isset($_POST['submit'])) {
     // Grab the profile data from the POST
@@ -50,11 +50,11 @@ if (isset($_POST['submit'])) {
         if (!empty($first_name) && !empty($last_name) && !empty($gender) && !empty($birthdate) && !empty($city) && !empty($state)) {
             // Only set the picture column if there is a new picture
             if (!empty($new_picture)) {
-                $query = "UPDATE mismatch_user SET first_name = :first_name, last_name = :last_name, email = :email, " .
+                $query = "UPDATE users SET first_name = :first_name, last_name = :last_name, email = :email, " .
                     "picture = :new_picture WHERE user_id = '" . $_SESSION['user_id'] . "'";
             }
             else {
-                $query = "UPDATE mismatch_user SET first_name = :first_name, last_name = :last_name, email = :email, " .
+                $query = "UPDATE users SET first_name = :first_name, last_name = :last_name, email = :email, " .
                     "WHERE user_id = '" . $_SESSION['user_id'] . "'";
             }
             $stmt = $dbh ->prepare($query);
