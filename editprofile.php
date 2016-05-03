@@ -1,5 +1,7 @@
 <?php
-$dbh = new PDO('mysql:host=localhost;dbname=mismatchdb', 'root', 'root');
+session_start();
+
+$dbh = new PDO('mysql:host=localhost;dbname=blurtdb', 'root', 'root');
 
 if (isset($_POST['submit'])) {
     // Grab the profile data from the POST
@@ -91,13 +93,10 @@ if (isset($_POST['submit'])) {
         <?php if (!empty($old_picture)) {
             echo '<img class="profile" src="' . MM_UPLOADPATH . $old_picture . '" alt="Profile Picture" />';
         } ?>
+        <label for="description">Description:</label>
+        <input type="text" id="description">
     </fieldset>
     <input type="submit" value="Save Profile" name="submit"/>
 </form>
-
-<script src="scripts.js"></script>
-<div id="description">
-    <button onclick="prompt1()">Add a description for this profile</button><div id="bio1" style="margin-top: 5px; word-wrap: break-word"></div>
-</div>
 </body>
 </html>
