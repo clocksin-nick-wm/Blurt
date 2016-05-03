@@ -15,5 +15,6 @@ include_once('navbar.php');
     <?php echo $_SESSION['last_name']; ?>
     <?php echo $_SESSION['email']; ?>
     <!-- User information given in account making -->
+    <?php echo $_SESSION['description']; ?>
 </div>
 
