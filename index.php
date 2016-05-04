@@ -23,7 +23,7 @@ require_once('start_session.php');
     <div class="navoverlay"></div>
     <div class="nav">
         <div id="logo-center" class="centered">
-            <img height=70 width=90 src="Blurt.png" >
+            <img height=70 width=90 src="Blurt.png">
         </div>
         <ul>
             <li class="selected"> <i class="fa fa-newspaper-o "></i> <a href="view.php">Other profiles</a> </li>
