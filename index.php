@@ -167,6 +167,18 @@ echo '</table>'
                 </div>
             </div>
 
+            <div class="feed-item">
+                <div class="icon-holder"><div class="icon"></div></div>
+                <div class="text-holder col-3-5">
+                    <div class="feed-title">Nick Cl0cksin</div>
+                    <div class="feed-description">Broncos Suck, Patriots are the BEST team in the league!!!!!!!!!!!!!!!!</div>
+                </div>
+                <div class="post-options-holder">
+                    <div class= "tools">
+                        <i class="fa fa-ellipsis-v" id="postsettings"></i>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
