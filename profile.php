@@ -1,5 +1,4 @@
 <?php
-
 include_once('authenticate.php');
 include_once('navbar.php');
 ?>
