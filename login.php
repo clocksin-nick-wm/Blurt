@@ -8,11 +8,11 @@ if(!isset($_SESSION['user_id'])) {
         $password = trim($_POST['password']);
         if(!empty($username) && !empty($password)) {
             $dbh = new PDO('mysql:host=localhost;dbname=blurtdb', 'root', 'root');
-            $query = "SELECT username, password FROM users WHERE username = :username AND  password = SHA(:password)";
+            $query = "SELECT id, username FROM users WHERE username = :user_username AND  password = SHA(:user_password)";
             $stmt = $dbh -> prepare($query);
             $stmt -> execute(array(
-               ':username' => $username,
-                ':password' => $password
+               'user_username' => $username,
+                'user_password' => $password
             ));
             $result = $stmt -> fetchAll();
             if(count($result) == 1 ){
@@ -26,30 +26,34 @@ if(!isset($_SESSION['user_id'])) {
             }
             else {
                 // The username/password are incorrect so set an error message
-                $error_msg = 'Sorry, you must enter a valid username and password to log in.';
+               echo 'Sorry, you must enter a valid username and password to log in.';
             }
         }
         else {
             // The username/password weren't entered so set an error message
-            $error_msg = 'Sorry, you must enter your username and password to log in.';
+            echo 'Sorry, you must enter your username and password to log in.';
         }
         }
 }
+if(empty($_SESSION['user_id'])){
 ?>
 <!DOCTYPE html>
-    <html>
+<html>
 <head>
-    <title>Blurt <?php echo  $pagetitle ?> </title>
+    <title>Blurt <?php echo $pagetitle ?> </title>
 </head>
 <body>
 <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
     <fieldset>
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username">
+        <input type="text" id="username" name="username" value="<?php if(!empty($username)) echo $username; ?>">
         <label for="password">Password:</label>
         <input id="password" name="password" type="password">
         <button type="submit" name="submit" id="submit">Submit</button>
     </fieldset>
 </form>
+<?php
+}
+?>
 </body>
 </html>
