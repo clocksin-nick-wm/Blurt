@@ -2,7 +2,7 @@
 $pagetitle = 'Login';
 session_start();
 
-if(!isset($_SESSION['user_id'])) {
+if(!isset($_SESSION['id'])) {
     if (isset($_POST['submit'])) {
         $username = trim($_POST['username']);
         $password = trim($_POST['password']);
@@ -17,9 +17,9 @@ if(!isset($_SESSION['user_id'])) {
             $result = $stmt -> fetchAll();
             if(count($result) == 1 ){
                 $row = $result[0];
-                $_SESSION['user_id'] = $row['user_id'];
+                $_SESSION['id'] = $row['id'];
                 $_SESSION['username'] = $row['username'];
-                setcookie('user_id', $row['user_id'], time() + (60 * 60 * 24 * 30));    // expires in 30 days
+                setcookie('id', $row['id'], time() + (60 * 60 * 24 * 30));    // expires in 30 days
                 setcookie('username', $row['username'], time() + (60 * 60 * 24 * 30));  // expires in 30 days
                 $home_url = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/index.php';
                 header('Location: ' . $home_url);
@@ -35,7 +35,7 @@ if(!isset($_SESSION['user_id'])) {
         }
         }
 }
-if(empty($_SESSION['user_id'])){
+if(empty($_SESSION['id'])){
 ?>
 <!DOCTYPE html>
 <html>

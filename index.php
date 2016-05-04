@@ -1,4 +1,6 @@
 <?php
+$username = $_SESSION['username'];
+print_r($username);
 require_once('authenticate.php');
 
 require_once('start_session.php');
