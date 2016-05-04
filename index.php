@@ -1,9 +1,7 @@
 <?php
-$username = $_SESSION['username'];
-print_r($username);
-require_once('authenticate.php');
 
 require_once('start_session.php');
+require_once('authenticate.php');
 
 $dbh = new PDO('mysql:host=127.0.0.1;dbname=blurtdb;', 'root' ,'root');
 
