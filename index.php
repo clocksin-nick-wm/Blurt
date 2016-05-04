@@ -1,8 +1,44 @@
 <?php
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 58b0af49e4da06228a45ba338904babf7782b89d
 require_once('start_session.php');
 include_once('authenticate.php');
 
 
+<<<<<<< HEAD
+=======
+// If the session vars aren't set, try to set them with a cookie
+if (!isset($_SESSION['user_id'])) {
+    if (isset($_COOKIE['user_id']) && isset($_COOKIE['username'])) {
+        $_SESSION['user_id'] = $_COOKIE['user_id'];
+        $_SESSION['username'] = $_COOKIE['username'];
+    }
+=======
+$username = $_SESSION['username'];
+print_r($username);
+require_once('authenticate.php');
+>>>>>>> 122e2eccbff75c01ff8743e45ae2eeb4d89c4780
+
+require_once('start_session.php');
+require_once('authenticate.php');
+
+$dbh = new PDO('mysql:host=127.0.0.1;dbname=blurtdb;', 'root' ,'root');
+
+$query = "SELECT user_id, post, post_number FROM posts ORDER BY post_number ASC";
+$stmt = $dbh -> prepare($query);
+$stmt -> execute();
+$data = $stmt -> fetchAll();
+echo '<h2>Recent Feed</h2>';
+echo '<table>';
+foreach($data as $row){
+
+>>>>>>> bccaf5e0e340247d02a32065d1742fc2eca12ee6
+}
+>>>>>>> 58b0af49e4da06228a45ba338904babf7782b89d
 echo '</table>'
 ?>
 <!DOCTYPE html>

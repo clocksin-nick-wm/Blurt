@@ -56,6 +56,9 @@ if(empty($_SESSION['id'])){
 </form>
 <?php
 }
+else{
+    echo '<p>You are already logged in please as ' . $_SESSION['username'] . ' return to the <a href="index.php">homepage.</a></p>';
+}
 ?>
 <footer><p>&copy Blurt 2016</p></footer>
 </body>
