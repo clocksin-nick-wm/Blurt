@@ -1,11 +1,20 @@
 <?php
-$username = $_SESSION['user_id'];
-print_r($username);
-print_r(error_log('user_id'));
 require_once('authenticate.php');
 
 require_once('start_session.php');
 
+$dbh = new PDO('mysql:host=127.0.0.1;dbname=blurtdb;', 'root' ,'root');
+
+$query = "SELECT user_id, post, post_number FROM posts ORDER BY post_number ASC";
+$stmt = $dbh -> prepare($query);
+$stmt -> execute();
+$data = $stmt -> fetchAll();
+echo '<h2>Recent Feed</h2>';
+echo '<table>';
+foreach($data as $row){
+
+}
+echo '</table>'
 ?>
 <!DOCTYPE html>
 <html>
