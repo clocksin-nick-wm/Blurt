@@ -77,5 +77,6 @@ if(isset($_POST['submit'])) {
         </fieldset>
         <button type="submit" name="submit">Submit</button>
     </form>
+    <footer><p>&copy Blurt 2016</p></footer>
 </body>
 </html>

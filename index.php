@@ -261,5 +261,6 @@ echo '</table>'
 
 session_destroy();
 ?>
+<footer><p>&copy Blurt 2016</p></footer>
 </body>
 </html>

@@ -55,5 +55,6 @@ if(empty($_SESSION['user_id'])){
 <?php
 }
 ?>
+<footer><p>&copy Blurt 2016</p></footer>
 </body>
 </html>
