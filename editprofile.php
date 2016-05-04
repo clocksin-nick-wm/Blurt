@@ -99,5 +99,6 @@ if (isset($_POST['submit'])) {
     </fieldset>
     <input type="submit" value="Save Profile" name="submit"/>
 </form>
+<footer><p>&copy Blurt 2016</p></footer>
 </body>
 </html>

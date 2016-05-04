@@ -19,4 +19,4 @@ include_once('navbar.php');
     <!-- User information given in account making -->
     <?php echo $_SESSION['description']; ?>
 </div>
-
+<footer><p>&copy Blurt 2016</p></footer>
