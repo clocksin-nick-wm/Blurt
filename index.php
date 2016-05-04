@@ -1,5 +1,7 @@
 <?php
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 require_once('start_session.php');
 include_once('authenticate.php');
 
@@ -14,8 +16,10 @@ if (!isset($_SESSION['user_id'])) {
 $username = $_SESSION['username'];
 print_r($username);
 require_once('authenticate.php');
+>>>>>>> 122e2eccbff75c01ff8743e45ae2eeb4d89c4780
 
 require_once('start_session.php');
+require_once('authenticate.php');
 
 $dbh = new PDO('mysql:host=127.0.0.1;dbname=blurtdb;', 'root' ,'root');
 
