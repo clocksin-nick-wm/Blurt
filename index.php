@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 require_once('start_session.php');
 include_once('authenticate.php');
 
@@ -9,7 +10,26 @@ if (!isset($_SESSION['user_id'])) {
         $_SESSION['user_id'] = $_COOKIE['user_id'];
         $_SESSION['username'] = $_COOKIE['username'];
     }
+=======
+$username = $_SESSION['username'];
+print_r($username);
+require_once('authenticate.php');
+
+require_once('start_session.php');
+
+$dbh = new PDO('mysql:host=127.0.0.1;dbname=blurtdb;', 'root' ,'root');
+
+$query = "SELECT user_id, post, post_number FROM posts ORDER BY post_number ASC";
+$stmt = $dbh -> prepare($query);
+$stmt -> execute();
+$data = $stmt -> fetchAll();
+echo '<h2>Recent Feed</h2>';
+echo '<table>';
+foreach($data as $row){
+
+>>>>>>> bccaf5e0e340247d02a32065d1742fc2eca12ee6
 }
+echo '</table>'
 ?>
 <!DOCTYPE html>
 <html>
@@ -160,6 +180,18 @@ if (!isset($_SESSION['user_id'])) {
                 </div>
             </div>
 
+            <div class="feed-item">
+                <div class="icon-holder"><div class="icon"></div></div>
+                <div class="text-holder col-3-5">
+                    <div class="feed-title">Nick Cl0cks!n</div>
+                    <div class="feed-description">Broncos Suck, Patriots are the BEST team in the league!!!!!!!!!!!!!!!!</div>
+                </div>
+                <div class="post-options-holder">
+                    <div class= "tools">
+                        <i class="fa fa-ellipsis-v" id="postsettings"></i>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -252,6 +284,10 @@ if (!isset($_SESSION['user_id'])) {
     </div>
 </div>
 
+<?php
 
+session_destroy();
+?>
+<footer><p>&copy Blurt 2016</p></footer>
 </body>
 </html>

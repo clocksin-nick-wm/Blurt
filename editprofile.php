@@ -1,5 +1,6 @@
 <?php
 include_once('authenticate.php');
+
 $dbh = new PDO('mysql:host=localhost;dbname=blurtdb', 'root', 'root');
 
 if (isset($_POST['submit'])) {
@@ -78,6 +79,9 @@ if (isset($_POST['submit'])) {
     }
 }
 ?>
+<!DOCTYPE html>
+<html>
+<body>
 <form enctype="multipart/form-data" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
     <input type="hidden" name="MAX_FILE_SIZE" value="<?php echo MM_MAXFILESIZE; ?>"/>
     <fieldset>
@@ -99,5 +103,6 @@ if (isset($_POST['submit'])) {
     </fieldset>
     <input type="submit" value="Save Profile" name="submit"/>
 </form>
+<footer><p>&copy Blurt 2016</p></footer>
 </body>
 </html>
