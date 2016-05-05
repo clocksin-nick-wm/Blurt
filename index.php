@@ -19,7 +19,7 @@ $page_title = "Homepage";
     <ul class="nav-bar">
         <li class="nav-button-home"><a href="index.php">Home</a></li>
         <li class="nav-button-services"><a href="#">Chat</a></li>
-        <li class="nav-button-products"><a href="notif.html">Notifications</a></li>
+        <li class="nav-button-products"><a href="notif_v2.php">Notifications</a></li>
     </ul>
 </nav>
 
