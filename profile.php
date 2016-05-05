@@ -3,7 +3,9 @@ include('start_session.php');
 include_once('authenticate.php');
 include_once('navbar.php');
 $dbh = new PDO('mysql:host=localhost;dbname=blurtdb', 'root', 'root');
-
+    if(isset($_SESSION['user_id'])){
+        $query = "SELECT * FROM users WHERE user_id = '" . $_SESSION['id'] . "'";
+    }
 ?>
 <!DOCTYPE html>
 <html>
