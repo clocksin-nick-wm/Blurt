@@ -2,6 +2,8 @@
 include('start_session.php');
 include_once('authenticate.php');
 include_once('navbar.php');
+$dbh = new PDO('mysql:host=localhost;dbname=blurtdb', 'root', 'root');
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,11 +14,14 @@ include_once('navbar.php');
 <body>
 <?php echo $_SESSION['profile_pic']; ?>
 <div id="infoBox_Profile">
-    <?php echo $_SESSION['username']; ?>
+    <form>
+
+        <label>Username: <?php echo $_SESSION['username'] ?></label>
     <?php echo $_SESSION['first_name']; ?>
     <?php echo $_SESSION['last_name']; ?>
     <?php echo $_SESSION['email']; ?>
     <!-- User information given in account making -->
     <?php echo $_SESSION['description']; ?>
+    </form>
 </div>
 
