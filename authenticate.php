@@ -1,6 +1,6 @@
 <?php
 $page_title = 'Must Login';
-if(empty($_SESSION['id'])){
+if(!isset($_SESSION['id'])){
 ?>
 <!DOCTYPE html>
     <html>
