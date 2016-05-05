@@ -93,7 +93,7 @@
 
   } else {
       // Confirm the successful log-in
-      echo('<p class="login">You are logged in as ' . $_SESSION['username'] . '.</p>');
+      echo('<p class="login">You are logged in as ' . $_SESSION['username'] . ' return to the <a href="index.php">homepage</a>.</p>');
   }
 
 ?>
