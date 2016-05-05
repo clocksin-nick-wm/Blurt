@@ -1,5 +1,5 @@
 <?php
-
+include('start_session.php');
 include_once('authenticate.php');
 include_once('navbar.php');
 ?>
