@@ -1,10 +1,8 @@
 <?php
 require_once('start_session.php');
 include_once('authenticate.php');
-<<<<<<< HEAD
 
-=======
->>>>>>> e2235050c61d6ceed6bb63ad188658fb76ce058b
+
 ?>
 <!DOCTYPE html>
 <html>
