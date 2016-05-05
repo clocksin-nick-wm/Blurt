@@ -1,6 +1,10 @@
 <?php
 $page_title = 'Must Login';
+<<<<<<< HEAD
 if(!isset($_SESSION['id'])){
+=======
+if(empty($_SESSION['user_id'])){
+>>>>>>> 12a4914ed9115f7c8738522652ea539e8ee9befe
 ?>
 <!DOCTYPE html>
     <html>
