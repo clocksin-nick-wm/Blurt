@@ -16,12 +16,12 @@ $dbh = new PDO('mysql:host=localhost;dbname=blurtdb', 'root', 'root');
 <div id="infoBox_Profile">
     <form>
 
-        <label>Username: <?php echo $_SESSION['username'] ?></label>
-    <?php echo $_SESSION['first_name']; ?>
-    <?php echo $_SESSION['last_name']; ?>
-    <?php echo $_SESSION['email']; ?>
+        <label>Username: <?php echo $_SESSION['username'] ?></label> <br>
+        <label> First Name: <?php echo $_SESSION['first_name']; ?></label> <br>
+        <label> Last Name: <?php echo $_SESSION['last_name']; ?></label> <br>
+        <label> Email: <?php echo $_SESSION['email']; ?></label> <br>
     <!-- User information given in account making -->
-    <?php echo $_SESSION['description']; ?>
+        <label> Description: <?php echo $_SESSION['description']; ?></label> <br>
     </form>
 </div>
 
