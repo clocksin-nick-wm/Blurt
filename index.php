@@ -1,6 +1,15 @@
 <?php
 require_once('start_session.php');
 include_once('authenticate.php');
+
+
+// If the session vars aren't set, try to set them with a cookie
+if (!isset($_SESSION['user_id'])) {
+    if (isset($_COOKIE['user_id']) && isset($_COOKIE['username'])) {
+        $_SESSION['user_id'] = $_COOKIE['user_id'];
+        $_SESSION['username'] = $_COOKIE['username'];
+    }
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -151,18 +160,6 @@ include_once('authenticate.php');
                 </div>
             </div>
 
-            <div class="feed-item">
-                <div class="icon-holder"><div class="icon"></div></div>
-                <div class="text-holder col-3-5">
-                    <div class="feed-title">Nick Cl0cks!n</div>
-                    <div class="feed-description">Broncos Suck, Patriots are the BEST team in the league!!!!!!!!!!!!!!!!</div>
-                </div>
-                <div class="post-options-holder">
-                    <div class= "tools">
-                        <i class="fa fa-ellipsis-v" id="postsettings"></i>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
@@ -256,6 +253,5 @@ include_once('authenticate.php');
 </div>
 
 
-<footer><p>&copy Blurt 2016</p></footer>
 </body>
 </html>
