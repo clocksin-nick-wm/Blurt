@@ -3,6 +3,7 @@ require_once('start_session.php');
 include_once('authenticate.php');
 
 
+<<<<<<< HEAD
 // If the session vars aren't set, try to set them with a cookie
 if (!isset($_SESSION['user_id'])) {
     if (isset($_COOKIE['user_id']) && isset($_COOKIE['username'])) {
@@ -10,6 +11,8 @@ if (!isset($_SESSION['user_id'])) {
         $_SESSION['username'] = $_COOKIE['username'];
     }
 }
+=======
+>>>>>>> 7272fe450d8ba6a1e51c5054636e899239c4c5c5
 ?>
 <!DOCTYPE html>
 <html>
@@ -252,6 +255,13 @@ if (!isset($_SESSION['user_id'])) {
     </div>
 </div>
 
+<<<<<<< HEAD
+=======
 
+<<<<<<< HEAD
+=======
+>>>>>>> e2235050c61d6ceed6bb63ad188658fb76ce058b
+<footer><p>&copy Blurt 2016</p></footer>
+>>>>>>> 7272fe450d8ba6a1e51c5054636e899239c4c5c5
 </body>
 </html>
