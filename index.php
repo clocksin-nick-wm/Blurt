@@ -1,14 +1,11 @@
 <?php
 require_once('start_session.php');
-<<<<<<< HEAD
-require_once('authenticate.php');
-=======
+
 include_once('authenticate.php');
 
 $page_title = "Homepage";
 // If the session vars aren't set, try to set them with a cookie
 
->>>>>>> ab7c24dde6e424903f4429440317625006d2c39f
 ?>
 
 <!DOCTYPE html>

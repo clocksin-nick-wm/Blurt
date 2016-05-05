@@ -10,13 +10,13 @@
     color: #333;
 }
 
-.nav-bar .nav-button-home a { background:url("") no-repeat 0px -2px ;
+.nav-bar .nav-button-home a { background:url("") no-repeat 0 -2px ;
 }
 
-.nav-bar .nav-button-services a { background:url("") no-repeat 0px -2px transparent;
+.nav-bar .nav-button-services a { background:url("") no-repeat 0 -2px transparent;
 }
 
-.nav-bar .nav-button-products a { background:url("f") no-repeat 0px -2px transparent;
+.nav-bar .nav-button-products a { background:url("") no-repeat 0 -2px transparent;
 
 }
 body{
