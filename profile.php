@@ -19,11 +19,11 @@ $dbh = new PDO('mysql:host=localhost;dbname=blurtdb', 'root', 'root');
     <form>
 
         <label>Username: <?php echo $_SESSION['username'] ?></label> <br>
-        <label> First Name: <?php echo $_SESSION['first_name']; ?></label> <br>
-        <label> Last Name: <?php echo $_SESSION['last_name']; ?></label> <br>
-        <label> Email: <?php echo $_SESSION['email']; ?></label> <br>
+        <label>First Name: <?php echo $_SESSION['first_name']; ?></label> <br>
+        <label>Last Name: <?php echo $_SESSION['last_name']; ?></label> <br>
+        <label>Email: <?php echo $_SESSION['email']; ?></label> <br>
     <!-- User information given in account making -->
-        <label> Description: <?php echo $_SESSION['description']; ?></label> <br>
+        <label>Description: <?php echo $_SESSION['description']; ?></label> <br>
     </form>
 </div>
 
