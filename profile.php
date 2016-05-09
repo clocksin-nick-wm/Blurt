@@ -7,7 +7,7 @@ $dbh = new PDO('mysql:host=localhost;dbname=blurtdb', 'root', 'root');
         $query = "SELECT * FROM users WHERE id = '" . $_SESSION['id'] . "'";
     }
 if (!isset($_GET['user_id'])) {
-    $query = "SELECT username, first_name, last_name, gender, birthdate, city, state, picture FROM users WHERE id = '" . $_SESSION['id'] . "'";
+    $query = "SELECT username, first_name, last_name, email, description, picture FROM users WHERE id = '" . $_SESSION['id'] . "'";
     $stmt = $dbh -> prepare($query);
     $stmt -> execute();
     $data = $stmt -> fetchAll();
@@ -15,7 +15,7 @@ if (!isset($_GET['user_id'])) {
     print_r($error);
 }
 else {
-    $query = "SELECT username, first_name, last_name, gender, birthdate, city, state, picture FROM users WHERE id = '" . $_GET['id'] . "'";
+    $query = "SELECT username, first_name, last_name, email, description, picture FROM users WHERE id = '" . $_GET['id'] . "'";
     $stmt = $dbh -> prepare($query);
     $stmt -> execute();
     $data = $stmt -> fetchAll();
@@ -33,20 +33,8 @@ if (count($data) == 1) {
     if (!empty($row['last_name'])) {
         echo '<tr><td class="label">Last name:</td><td>' . $row['last_name'] . '</td></tr>';
     }
-
-    if (!empty($row['birthdate'])) {
-        if (!isset($_GET['user_id']) || ($_SESSION['user_id'] == $_GET['user_id'])) {
-            // Show the user their own birthdate
-            echo '<tr><td class="label">Birthdate:</td><td>' . $row['birthdate'] . '</td></tr>';
-        }
-        else {
-            // Show only the birth year for everyone else
-            list($year, $month, $day) = explode('-', $row['birthdate']);
-            echo '<tr><td class="label">Year born:</td><td>' . $year . '</td></tr>';
-        }
-    }
-    if (!empty($row['city']) || !empty($row['state'])) {
-        echo '<tr><td class="label">Location:</td><td>' . $row['city'] . ', ' . $row['state'] . '</td></tr>';
+    if (!empty($row['description'])) {
+        echo '<tr><td class="label">Description:</td><td>' . $row['description'] . '</td></tr>';
     }
     if (!empty($row['picture'])) {
         echo '<tr><td class="label">Picture:</td><td><img src="' . MM_UPLOADPATH . $row['picture'] .
