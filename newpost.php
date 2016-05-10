@@ -9,13 +9,14 @@ if(isset($_POST['submit'])){
     $post = trim($_POST['post']);
     if(!empty($_POST['post'])) {
 
-        $query = "INSERT INTO posts (post, user_id, username) VALUES (:post,'" . $_SESSION['user_id'] . "', '" . $_SESSION['username'] . "')";
+        $query = "INSERT INTO posts (post, user_id, username, post_time) VALUES (:post,'" . $_SESSION['user_id'] . "', '" . $_SESSION['username'] . "', NOW())";
         $stmt = $dbh->prepare($query);
         $results = $stmt->execute(array(
             'post' => $post
         ));
         if($results){
-            echo '<p>Your post was successful <a href="index.php">click here</a>  to see your post.</p>';
+            echo '<p>Your post was successful <a href="index.php">click here</a>  to see more posts.</p><br />';
+            echo $post;
             exit();
         }
     }
@@ -41,12 +42,16 @@ else {
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
+<?php
+include('navbar.php');
+?>
     <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>">
         <div class="form-group">
         <label for="post">Post:</label>
-        <textarea class="form-control" rows="5" name="post"></textarea>
+        <textarea class="form-control" rows="5" name="post" maxlength="140" style="min-width: 10%"></textarea>
             </div>
-        <button type="submit" name="submit">Submit</button>
+        <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+        </fieldset>
     </form>
 </body>
 </html>

@@ -1,6 +1,7 @@
 <?php
 include('start_session.php');
 include_once('authenticate.php');
+include('bootstrap.php');
 include_once('navbar.php');
 
 $dbh = new PDO('mysql:host=localhost;dbname=blurtdb', 'root', 'root');
@@ -63,4 +64,11 @@ foreach ($data as $row) {
     <title><?php echo $_SESSION['username']; ?>'s Profile</title>
     <!-- Whatever we decide to chose to have show on the page will work out on the tab putting the information wanted on this tab -->
 </head>
+<<<<<<< HEAD
 </html>
+=======
+<body>
+</body>
+</html>
+
+>>>>>>> 0415eb8b80d4e0942399dd9f08afe9ef997b7427
