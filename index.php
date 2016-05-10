@@ -4,6 +4,7 @@ require_once('start_session.php');
 include_once('authenticate.php');
 
 $page_title = "Homepage";
+// connect to post databse to create a table for all posts
 $dbh = new PDO ('mysql:host=localhost;dbname=blurtdb', 'root', 'root');
 // If the session vars aren't set, try to set them with a cookie
 $query = "SELECT username, post_id, post FROM posts WHERE username IS NOT NULL ORDER BY id DESC";
@@ -30,6 +31,7 @@ $results = $stmt -> fetchAll();
 <nav id="main-menu">
     <ul class="nav-bar">
         <?php
+        // Include navbar here
         include_once ('navbar.php');
         ?>
     </ul>
