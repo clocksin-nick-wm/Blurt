@@ -35,12 +35,69 @@ $page_title = "Homepage";
                 <p>I'm a lil annoyed lol.</p>
             </div>
         </div>
+
+        <!-- Testing out the favorite button to see if i can add a counter to it so the user can like it-->
+
         <div class="feed-footer clearfix">
             <div class="footer-left">
-                <span class="footer-time">10 Favorites</span>
-                <span class="footer-time">2 Resposts</span>
+
+
+
+                <span class="footer-time"><script type="text/javascript">
+                        var clicks = 0;
+                        if(clicks === 0){
+
+                        function Ffavorite() {
+                            clicks +=1;
+                            document.getElementById("Fclicks").innerHTML = clicks;
+                            }
+
+                        }
+                        else if(clicks === 1){
+
+                                clicks -= 1;
+                                document.getElementById("Fclicks").innerHTML = clicks;
+
+                        }
+
+                    </script>  Favorite:</span>
+
+                    <a id="Fclicks">0</a>
+
+
+
+
+                <span class="footer-time"><script type="text/javascript">
+                        var click = 0;
+                        if(click === 0){
+
+                            function Rfavorite() {
+                                click +=1;
+                                document.getElementById("Rclicks").innerHTML = click;
+                            }
+
+                        }
+                        else if(click === 1){
+
+                            click -= 1;
+                            document.getElementById("Rclicks").innerHTML = click;
+
+                        }
+
+                    </script>         Resposts:</span>
             </div>
+
+            <a id="Rclicks">0</a>
+
+
+            <div class="footer-right"> <button type="button" onClick="Rfavorite()"><img src="http://i.imgur.com/A9qM0Vz.png" width="20px" height="20px"  draggable="false" "></div>
+
+            <div class="footer-right"> <button type="button" onClick="Ffavorite()"><img src="http://i.imgur.com/pUsG2BS.png" width="20px" height="20px"  draggable="false" "></div>
+
         </div>
+
+        <!-- Testing code ends here-->
+
     </div>
 
     <div class="feed-border clearfix">
@@ -139,5 +196,4 @@ $page_title = "Homepage";
     </div>
 </div>
 </body>
-</DOCTYPEhtml>
 
