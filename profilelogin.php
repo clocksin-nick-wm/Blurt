@@ -100,7 +100,7 @@ if (empty($_SESSION['user_id'])) {
 </style>
 <body>
 <nav class="navbar navbar-default">
-    <img src="Blurt.png" width="85px" height="50px">
+    <img src="Blurt.png" width="75px" height="50px">
     <form class="navbar-form navbar-right" method="post" action="<?php $_SERVER['PHP_SELF'] ?>">
         <div class="form-group">
             <input name="username" id="username" type="text" class="form-control" placeholder="Username">

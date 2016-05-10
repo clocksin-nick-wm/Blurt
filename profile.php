@@ -32,16 +32,16 @@ foreach ($data as $row) {
     //$row = $data[0];
     echo '<table>';
     if (!empty($row['username'])) {
-        echo '<tr><td class="label">Username:</td><td>' . $row['username'] . '</td></tr>';
+        echo '<tr><td >Username: </td><td>' . $row['username'] . '</td></tr>';
     }
     if (!empty($row['first_name'])) {
-        echo '<tr><td class="label">First name:</td><td>' . $row['first_name'] . '</td></tr>';
+        echo '<tr><td>First name: </td><td>' . $row['first_name'] . '</td></tr>';
     }
     if (!empty($row['last_name'])) {
-        echo '<tr><td class="label">Last name:</td><td>' . $row['last_name'] . '</td></tr>';
+        echo '<tr><td>Last name: </td><td>' . $row['last_name'] . '</td></tr>';
     }
     if (!empty($row['description'])) {
-        echo '<tr><td class="label">Description:</td><td>' . $row['description'] . '</td></tr>';
+        echo '<tr><td>Description: </td><td>' . $row['description'] . '</td></tr>';
     }
     if (!empty($row['picture'])) {
         echo '<tr><td class="label">Picture:</td><td><img src="' . MM_UPLOADPATH . $row['picture'] .
