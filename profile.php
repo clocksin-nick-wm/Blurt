@@ -3,14 +3,16 @@ include('start_session.php');
 include_once('authenticate.php');
 include('bootstrap.php');
 include_once('navbar.php');
-
+//Connect to database
 $dbh = new PDO('mysql:host=localhost;dbname=blurtdb', 'root', 'root');
     if(isset($_SESSION['id'])){
+        // If session select user information
         $query = "SELECT * FROM users WHERE id = '" . $_SESSION['user_id'] . "'";
         $stmt = $dbh -> prepare($query);
         $stmt -> execute();
         $data = $stmt -> fetchAll();
     }
+
 if (!isset($_GET['user_id'])) {
     $query = "SELECT username, first_name, last_name FROM users WHERE id = '" . $_SESSION['user_id'] . "'";
     $stmt = $dbh -> prepare($query);
@@ -58,7 +60,6 @@ foreach ($data as $row) {
 <html>
 <head>
     <title><?php echo $_SESSION['username']; ?>'s Profile</title>
-    <!-- Whatever we decide to chose to have show on the page will work out on the tab putting the information wanted on this tab -->
 </head>
 </html>
 

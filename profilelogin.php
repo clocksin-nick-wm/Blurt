@@ -99,6 +99,7 @@ if (empty($_SESSION['user_id'])) {
     }
 </style>
 <body>
+<!-- navbar contain login for users if account is created -->
 <nav class="navbar navbar-default">
     <img src="Blurt.png" width="75px" height="50px">
     <form class="navbar-form navbar-right" method="post" action="<?php $_SERVER['PHP_SELF'] ?>">
@@ -110,14 +111,16 @@ if (empty($_SESSION['user_id'])) {
     </form>
 </nav>
 <?php
-
+// If the sign up submit is clicked then this statement will run
 if (isset($_POST['signup'])) {
+    // Variagles for Post form sign up is defined
     $first_name = trim($_POST['first_name']);
     $last_name = trim($_POST['last_name']);
     $email = trim($_POST['email']);
     $username = trim($_POST['username']);
     $password1 = trim($_POST['password1']);
     $password2 = trim($_POST['password2']);
+    //if not empty the form will pass this
     if (!empty($first_name) && !empty($last_name) && !empty($email) && !empty($username) && !empty($password1) && !empty($password2) && ($password1 == $password2)) {
         $query = "INSERT INTO users (first_name, last_name, email, username, password) VALUES (:first_name, :last_name, :email, :username, SHA(:password1))";
         $stmt = $dbh->prepare($query);
@@ -128,10 +131,12 @@ if (isset($_POST['signup'])) {
             'username' => $username,
             'password1' => $password1
         ));
+        // if successful in inputting data into database success code will run
         if ($results) {
 
 
         } else {
+            // if theres an error then it will not run
             echo '<p>There was an error in the form that you entered</p>';
         }
 
@@ -139,8 +144,8 @@ if (isset($_POST['signup'])) {
 }
 
 ?>
-<div id="form"
-     style="height: 700px; width: 400px; float: right; top: 150px; right:50px; z-index: 1; position:absolute;">
+<!-- form for the sign in information-->
+<div id="form" style="height: 700px; width: 400px; float: right; top: 150px; right:50px; z-index: 1; position:absolute;">
     <form id="msform" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>"
           style="height: 700px; width: 400px; float: left;">
         <fieldset style="height: 700px; width: 400px; margin-top: -12.5%; margin-left: -.1%;">
@@ -164,11 +169,12 @@ if (isset($_POST['signup'])) {
     </form>
 </div>
 <footer>
-
+<!-- Footer -->
 </footer>
 <?php
 }
 else {
+    // If the user is already logged in then this information will appear
     echo '<p>You are already logged in please return to the <a href="index.php">homepage</a> </p>';
 
 }
