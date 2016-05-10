@@ -32,13 +32,20 @@ else {
     <html>
 <head>
     <title>Blurt <?php echo $page_title ?></title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
     <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>">
+        <div class="form-group">
         <label for="post">Post:</label>
-        <textarea type="text" name="post">
-
-        </textarea>
+        <textarea class="form-control" rows="5" name="post"></textarea>
+            </div>
         <button type="submit" name="submit">Submit</button>
     </form>
 </body>

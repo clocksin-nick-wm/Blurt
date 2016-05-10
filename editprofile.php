@@ -94,6 +94,7 @@ if (isset($_POST['submit'])) {
                 <label for="email">Email:</label>
                 <input type="email" id="email" value="<?php if(!empty($email))  echo $email; ?>">
                 <input type="hidden" name="old_picture" value="<?php if (!empty($old_picture)) echo $old_picture; ?>"/>
+                <br>
                 <label for="new_picture">Picture:</label>
                 <input type="file" id="new_picture" name="new_picture"/>
                 <?php if (!empty($old_picture)) {
