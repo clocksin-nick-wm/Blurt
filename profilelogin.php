@@ -130,7 +130,7 @@ if (isset($_POST['signup'])) {
         ));
         if ($results) {
             echo '<p>Thank You for joining Blurt click here to <a href="profilelogin.php">login</a></p>';
-            exit();
+
         } else {
             echo '<p>There was an error in the form that you entered</p>';
         }
