@@ -1,7 +1,7 @@
 <?php
 include ('start_session.php');
 include_once('authenticate.php');
-require("Varibles.php");
+require('variables.php');
 $dbh = new PDO('mysql:host=localhost;dbname=blurtdb', 'root', 'root');
 
 if (isset($_POST['submit'])) {
