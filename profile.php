@@ -6,24 +6,33 @@ include_once('navbar.php');
 $dbh = new PDO('mysql:host=localhost;dbname=blurtdb', 'root', 'root');
     if(isset($_SESSION['id'])){
         $query = "SELECT * FROM users WHERE id = '" . $_SESSION['id'] . "'";
+        $stmt = $dbh -> prepare($query);
+        $stmt -> execute();
+        $data = $stmt -> fetchAll();
     }
 if (!isset($_GET['user_id'])) {
-    $query = "SELECT username, first_name, last_name, email, description, picture FROM users WHERE id = '" . $_SESSION['id'] . "'";
+    $query = "SELECT username, first_name, last_name FROM users WHERE id = '" . $_SESSION['id'] . "'";
     $stmt = $dbh -> prepare($query);
-    $stmt -> execute();
+    $stmt -> execute(array(
+        $username => 'username',
+        $first_name => 'first_name',
+        $last_name => 'last_name'
+    ));
     $data = $stmt -> fetchAll();
-    $error = error_log();
-    print_r($error);
+    //$error = error_log(0);
+    //print_r($error);
 }
 else {
-    $query = "SELECT username, first_name, last_name, email, description, picture FROM users WHERE id = '" . $_GET['id'] . "'";
+    $query = "SELECT username, first_name, last_name FROM users WHERE id = '" . $_GET['id'] . "'";
     $stmt = $dbh -> prepare($query);
     $stmt -> execute();
     $data = $stmt -> fetchAll();
 }
-if (count($data) == 1) {
+//$_SESSION['id'] = 1;
+//echo $_SESSION['id'] . "<- session";
+foreach ($data as $row) {
     // The user row was found so display the user data
-    $row = $data[0];
+    //$row = $data[0];
     echo '<table>';
     if (!empty($row['username'])) {
         echo '<tr><td class="label">Username:</td><td>' . $row['username'] . '</td></tr>';
@@ -46,9 +55,7 @@ if (count($data) == 1) {
         echo '<p>Would you like to <a href="editprofile.php">edit your profile</a>?</p>';
     }
 } // End of check for a single row of user results
-else {
-    echo '<p class="error">There was a problem accessing your profile.</p>';
-}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -57,4 +64,3 @@ else {
     <!-- Whatever we decide to chose to have show on the page will work out on the tab putting the information wanted on this tab -->
 </head>
 </html>
-
