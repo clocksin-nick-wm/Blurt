@@ -6,25 +6,21 @@ include_once('navbar.php');
 
 $dbh = new PDO('mysql:host=localhost;dbname=blurtdb', 'root', 'root');
     if(isset($_SESSION['id'])){
-        $query = "SELECT * FROM users WHERE id = '" . $_SESSION['id'] . "'";
+        $query = "SELECT * FROM users WHERE id = '" . $_SESSION['user_id'] . "'";
         $stmt = $dbh -> prepare($query);
         $stmt -> execute();
         $data = $stmt -> fetchAll();
     }
 if (!isset($_GET['user_id'])) {
-    $query = "SELECT username, first_name, last_name FROM users WHERE id = '" . $_SESSION['id'] . "'";
+    $query = "SELECT username, first_name, last_name FROM users WHERE id = '" . $_SESSION['user_id'] . "'";
     $stmt = $dbh -> prepare($query);
-    $stmt -> execute(array(
-        $username => 'username',
-        $first_name => 'first_name',
-        $last_name => 'last_name'
-    ));
+    $stmt -> execute();
     $data = $stmt -> fetchAll();
     //$error = error_log(0);
     //print_r($error);
 }
 else {
-    $query = "SELECT username, first_name, last_name FROM users WHERE id = '" . $_GET['id'] . "'";
+    $query = "SELECT username, first_name, last_name FROM users WHERE id = '" . $_GET['user_id'] . "'";
     $stmt = $dbh -> prepare($query);
     $stmt -> execute();
     $data = $stmt -> fetchAll();
@@ -64,11 +60,5 @@ foreach ($data as $row) {
     <title><?php echo $_SESSION['username']; ?>'s Profile</title>
     <!-- Whatever we decide to chose to have show on the page will work out on the tab putting the information wanted on this tab -->
 </head>
-<<<<<<< HEAD
-</html>
-=======
-<body>
-</body>
 </html>
 
->>>>>>> 0415eb8b80d4e0942399dd9f08afe9ef997b7427

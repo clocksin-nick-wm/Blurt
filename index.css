@@ -1,32 +1,3 @@
-#main-menu .nav-bar { list-style:none; margin-top: 40px;
-}
-#main-menu .nav-bar li { display:inline; padding:0 10px;
-}
-#main-menu .nav-bar li a {
-    text-decoration: none;
-    padding-left: 25px;
-    text-transform: uppercase;
-    color: #333;
-}
-
-.nav-bar .nav-button-home a { background:url("") no-repeat 0 -2px ;
-}
-
-.nav-bar .nav-button-services a { background:url("") no-repeat 0 -2px transparent;
-}
-
-.nav-bar .nav-button-products a { background:url("") no-repeat 0 -2px transparent;
-
-}
-
-body{
-    background: #b5e5e8;
-    font-family: 'gravity';
-}
-@font-face {
-    font-family:'gravity';
-    src: url('Gravity-Light.otf');
-}
 a,a:visited{
     color: #3568AB;
     text-decoration: none;
