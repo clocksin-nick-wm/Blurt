@@ -83,6 +83,9 @@ if (isset($_POST['submit'])) {
 ?>
 <html>
     <body>
+    <?php
+    include('navbar.php');
+    ?>
         <form enctype="multipart/form-data" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
             <input type="hidden" name="MAX_FILE_SIZE" value="<?php echo MM_MAXFILESIZE; ?>"/>
             <fieldset>

@@ -4,7 +4,12 @@ require_once('start_session.php');
 include_once('authenticate.php');
 
 $page_title = "Homepage";
+$dbh = new PDO ('mysql:host=localhost;dbname=blurtdb', 'root', 'root');
 // If the session vars aren't set, try to set them with a cookie
+$query = "SELECT username, post_id, post FROM posts WHERE username IS NOT NULL ORDER BY id DESC";
+$stmt = $dbh -> prepare($query);
+$stmt -> execute();
+$results = $stmt -> fetchAll();
 
 ?>
 
@@ -12,7 +17,14 @@ $page_title = "Homepage";
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="index.css">
-    <title>Latest Activity</title>
+    <title>Blurt <?php echo $page_title ?></title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
 <nav id="main-menu">
