@@ -58,42 +58,42 @@ $results = $stmt -> fetchAll();
 
 
                 <span class="footer-time"><script type="text/javascript">
-                        function favorite(){
+                        function favoriteOK(){
                             var click = 0;
                             if(click === 0 || favorited == false){
                                 click += 1;
                                 favorited = true;
-                                document.getElementById("Fclicks").innerHTML = click;
+                                document.getElementById("Fclicksok").innerHTML = click;
 
                             }
                             else{
                                 click -= 1;
                                 favorited = false;
-                                document.getElementById("Fclicks").innerHTML = click;
+                                document.getElementById("Fclicksok").innerHTML = click;
 
                             }
                         }
 
                     </script>Favorite:</span>
 
-                    <a id="Fclicks">&nbsp;0</a>
+                    <a id="Fclicksok">&nbsp;0</a>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
                 <span class="footer-time"><script type="text/javascript">
-                        function repost(){
+                        function repostOK(){
                             var click = 0;
                             if(click === 0 || favorited == false){
                                 click += 1;
                                 favorited = true;
-                                document.getElementById("Rclicks").innerHTML = click;
+                                document.getElementById("Rclicksok").innerHTML = click;
 
                             }
                             else{
                                 click -= 1;
                                 favorited = false;
-                                document.getElementById("Rclicks").innerHTML = click;
+                                document.getElementById("Rclicksok").innerHTML = click;
 
                             }
                         }
@@ -101,12 +101,12 @@ $results = $stmt -> fetchAll();
                     </script>Resposts:</span>
             </div>
 
-            <a id="Rclicks">0</a>
+            <a id="Rclicksok">0</a>
 
 
-            <div class="footer-right"> <button type="button" onClick="repost()"><img src="http://i.imgur.com/A9qM0Vz.png" width="20px" height="20px"  draggable="false" "></div>
+            <div class="footer-right"> <button type="button" onClick="repostOK()"><img src="http://i.imgur.com/A9qM0Vz.png" width="20px" height="20px"  draggable="false" "></div>
 
-            <div class="footer-right"> <button type="button" onClick="favorite()"><img src="http://i.imgur.com/pUsG2BS.png" width="20px" height="20px"  draggable="false" "></div>
+            <div class="footer-right"> <button type="button" onClick="favoriteOK()"><img src="http://i.imgur.com/pUsG2BS.png" width="20px" height="20px"  draggable="false" "></div>
 
         </div>
 
@@ -131,42 +131,42 @@ $results = $stmt -> fetchAll();
 
 
                 <span class="footer-time"><script type="text/javascript">
-                        function favorite(){
+                        function favoriteFB(){
                             var click = 0;
                             if(click === 0 || favorited == false){
                                 click += 1;
                                 favorited = true;
-                                document.getElementById("Fclicks").innerHTML = click;
+                                document.getElementById("Fclicksfb").innerHTML = click;
 
                             }
                             else{
                                 click -= 1;
                                 favorited = false;
-                                document.getElementById("Fclicks").innerHTML = click;
+                                document.getElementById("Fclicksfb").innerHTML = click;
 
                             }
                         }
 
                     </script>Favorite:</span>
 
-                <a id="Fclicks">&nbsp;0</a>
+                <a id="Fclicksfb">&nbsp;0</a>
 
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
                 <span class="footer-time"><script type="text/javascript">
-                        function repost(){
+                        function repostFB(){
                             var click = 0;
                             if(click === 0 || favorited == false){
                                 click += 1;
                                 favorited = true;
-                                document.getElementById("Rclicks").innerHTML = click;
+                                document.getElementById("Rclicksfb").innerHTML = click;
 
                             }
                             else{
                                 click -= 1;
                                 favorited = false;
-                                document.getElementById("Rclicks").innerHTML = click;
+                                document.getElementById("Rclicksfb").innerHTML = click;
 
                             }
                         }
@@ -174,12 +174,12 @@ $results = $stmt -> fetchAll();
                     </script>Resposts:</span>
             </div>
 
-            <a id="Rclicks">0</a>
+            <a id="Rclicksfb">0</a>
 
 
-            <div class="footer-right"> <button type="button" onClick="repost()"><img src="http://i.imgur.com/A9qM0Vz.png" width="20px" height="20px"  draggable="false" "></div>
+            <div class="footer-right"> <button type="button" onClick="repostFB()"><img src="http://i.imgur.com/A9qM0Vz.png" width="20px" height="20px"  draggable="false" "></div>
 
-            <div class="footer-right"> <button type="button" onClick="favorite()"><img src="http://i.imgur.com/pUsG2BS.png" width="20px" height="20px"  draggable="false" "></div>
+            <div class="footer-right"> <button type="button" onClick="favoriteFB()"><img src="http://i.imgur.com/pUsG2BS.png" width="20px" height="20px"  draggable="false" "></div>
 
         </div>
     </div>
@@ -201,42 +201,42 @@ $results = $stmt -> fetchAll();
 
 
                 <span class="footer-time"><script type="text/javascript">
-                        function favorite(){
+                        function favoriteD(){
                             var click = 0;
                             if(click === 0 || favorited == false){
                                 click += 1;
                                 favorited = true;
-                                document.getElementById("Fclicks").innerHTML = click;
+                                document.getElementById("Fclicksd").innerHTML = click;
 
                             }
                             else{
                                 click -= 1;
                                 favorited = false;
-                                document.getElementById("Fclicks").innerHTML = click;
+                                document.getElementById("Fclicksd").innerHTML = click;
 
                             }
                         }
 
                     </script>Favorite:</span>
 
-                <a id="Fclicks">&nbsp;0</a>
+                <a id="Fclicksd">&nbsp;0</a>
 
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
                 <span class="footer-time"><script type="text/javascript">
-                        function repost(){
+                        function repostD(){
                             var click = 0;
                             if(click === 0 || favorited == false){
                                 click += 1;
                                 favorited = true;
-                                document.getElementById("Rclicks").innerHTML = click;
+                                document.getElementById("Rclicksd").innerHTML = click;
 
                             }
                             else{
                                 click -= 1;
                                 favorited = false;
-                                document.getElementById("Rclicks").innerHTML = click;
+                                document.getElementById("Rclicksd").innerHTML = click;
 
                             }
                         }
@@ -244,12 +244,12 @@ $results = $stmt -> fetchAll();
                     </script>Resposts:</span>
             </div>
 
-            <a id="Rclicks">0</a>
+            <a id="Rclicksd">0</a>
 
 
-            <div class="footer-right"> <button type="button" onClick="repost()"><img src="http://i.imgur.com/A9qM0Vz.png" width="20px" height="20px"  draggable="false" "></div>
+            <div class="footer-right"> <button type="button" onClick="repostD()"><img src="http://i.imgur.com/A9qM0Vz.png" width="20px" height="20px"  draggable="false" "></div>
 
-            <div class="footer-right"> <button type="button" onClick="favorite()"><img src="http://i.imgur.com/pUsG2BS.png" width="20px" height="20px"  draggable="false" "></div>
+            <div class="footer-right"> <button type="button" onClick="favoriteD()"><img src="http://i.imgur.com/pUsG2BS.png" width="20px" height="20px"  draggable="false" "></div>
 
         </div>
     </div>
@@ -271,42 +271,42 @@ $results = $stmt -> fetchAll();
 
 
                 <span class="footer-time"><script type="text/javascript">
-                        function favorite(){
+                        function favoriteAR(){
                             var click = 0;
                             if(click === 0 || favorited == false){
                                 click += 1;
                                 favorited = true;
-                                document.getElementById("Fclicks").innerHTML = click;
+                                document.getElementById("Fclicksar").innerHTML = click;
 
                             }
                             else{
                                 click -= 1;
                                 favorited = false;
-                                document.getElementById("Fclicks").innerHTML = click;
+                                document.getElementById("Fclicksar").innerHTML = click;
 
                             }
                         }
 
                     </script>Favorite:</span>
 
-                <a id="Fclicks">&nbsp;0</a>
+                <a id="Fclicksar">&nbsp;0</a>
 
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
                 <span class="footer-time"><script type="text/javascript">
-                        function repost(){
+                        function repostAR(){
                             var click = 0;
                             if(click === 0 || favorited == false){
                                 click += 1;
                                 favorited = true;
-                                document.getElementById("Rclicks").innerHTML = click;
+                                document.getElementById("Rclicksar").innerHTML = click;
 
                             }
                             else{
                                 click -= 1;
                                 favorited = false;
-                                document.getElementById("Rclicks").innerHTML = click;
+                                document.getElementById("Rclicksar").innerHTML = click;
 
                             }
                         }
@@ -314,12 +314,12 @@ $results = $stmt -> fetchAll();
                     </script>Resposts:</span>
             </div>
 
-            <a id="Rclicks">0</a>
+            <a id="Rclicksar">0</a>
 
 
-            <div class="footer-right"> <button type="button" onClick="repost()"><img src="http://i.imgur.com/A9qM0Vz.png" width="20px" height="20px"  draggable="false" "></div>
+            <div class="footer-right"> <button type="button" onClick="repostAR()"><img src="http://i.imgur.com/A9qM0Vz.png" width="20px" height="20px"  draggable="false" "></div>
 
-            <div class="footer-right"> <button type="button" onClick="favorite()"><img src="http://i.imgur.com/pUsG2BS.png" width="20px" height="20px"  draggable="false" "></div>
+            <div class="footer-right"> <button type="button" onClick="favoriteAR()"><img src="http://i.imgur.com/pUsG2BS.png" width="20px" height="20px"  draggable="false" "></div>
 
         </div>
     </div>
@@ -341,42 +341,42 @@ $results = $stmt -> fetchAll();
 
 
                 <span class="footer-time"><script type="text/javascript">
-                        function favorite(){
+                        function favoriteGB(){
                             var click = 0;
                             if(click === 0 || favorited == false){
                                 click += 1;
                                 favorited = true;
-                                document.getElementById("Fclicks").innerHTML = click;
+                                document.getElementById("Fclicksgb").innerHTML = click;
 
                             }
                             else{
                                 click -= 1;
                                 favorited = false;
-                                document.getElementById("Fclicks").innerHTML = click;
+                                document.getElementById("Fclicksgb").innerHTML = click;
 
                             }
                         }
 
                     </script>Favorite:</span>
 
-                <a id="Fclicks">&nbsp;0</a>
+                <a id="Fclicksgb">&nbsp;0</a>
 
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
                 <span class="footer-time"><script type="text/javascript">
-                        function repost(){
+                        function repostGB(){
                             var click = 0;
                             if(click === 0 || favorited == false){
                                 click += 1;
                                 favorited = true;
-                                document.getElementById("Rclicks").innerHTML = click;
+                                document.getElementById("Rclicksgb").innerHTML = click;
 
                             }
                             else{
                                 click -= 1;
                                 favorited = false;
-                                document.getElementById("Rclicks").innerHTML = click;
+                                document.getElementById("Rclicksgb").innerHTML = click;
 
                             }
                         }
@@ -384,12 +384,12 @@ $results = $stmt -> fetchAll();
                     </script>Resposts:</span>
             </div>
 
-            <a id="Rclicks">0</a>
+            <a id="Rclicksgb">0</a>
 
 
-            <div class="footer-right"> <button type="button" onClick="repost()"><img src="http://i.imgur.com/A9qM0Vz.png" width="20px" height="20px"  draggable="false" "></div>
+            <div class="footer-right"> <button type="button" onClick="repostGB()"><img src="http://i.imgur.com/A9qM0Vz.png" width="20px" height="20px"  draggable="false" "></div>
 
-            <div class="footer-right"> <button type="button" onClick="favorite()"><img src="http://i.imgur.com/pUsG2BS.png" width="20px" height="20px"  draggable="false" "></div>
+            <div class="footer-right"> <button type="button" onClick="favoriteGB()"><img src="http://i.imgur.com/pUsG2BS.png" width="20px" height="20px"  draggable="false" "></div>
 
         </div>
     </div>
@@ -413,42 +413,42 @@ $results = $stmt -> fetchAll();
 
 
                 <span class="footer-time"><script type="text/javascript">
-                        function favorite(){
+                        function favoriteKC(){
                             var click = 0;
                             if(click === 0 || favorited == false){
                                 click += 1;
                                 favorited = true;
-                                document.getElementById("Fclicks").innerHTML = click;
+                                document.getElementById("Fclickskc").innerHTML = click;
 
                             }
                             else{
                                 click -= 1;
                                 favorited = false;
-                                document.getElementById("Fclicks").innerHTML = click;
+                                document.getElementById("Fclickskc").innerHTML = click;
 
                             }
                         }
 
                     </script>Favorite:</span>
 
-                <a id="Fclicks">&nbsp;0</a>
+                <a id="Fclickskc">&nbsp;0</a>
 
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
                 <span class="footer-time"><script type="text/javascript">
-                        function repost(){
+                        function repostKC(){
                             var click = 0;
                             if(click === 0 || favorited == false){
                                 click += 1;
                                 favorited = true;
-                                document.getElementById("Rclicks").innerHTML = click;
+                                document.getElementById("Rclickskc").innerHTML = click;
 
                             }
                             else{
                                 click -= 1;
                                 favorited = false;
-                                document.getElementById("Rclicks").innerHTML = click;
+                                document.getElementById("Rclickskc").innerHTML = click;
 
                             }
                         }
@@ -456,12 +456,12 @@ $results = $stmt -> fetchAll();
                     </script>Resposts:</span>
             </div>
 
-            <a id="Rclicks">0</a>
+            <a id="Rclickskc">0</a>
 
 
-            <div class="footer-right"> <button type="button" onClick="repost()"><img src="http://i.imgur.com/A9qM0Vz.png" width="20px" height="20px"  draggable="false" "></div>
+            <div class="footer-right"> <button type="button" onClick="repostKC()"><img src="http://i.imgur.com/A9qM0Vz.png" width="20px" height="20px"  draggable="false" "></div>
 
-            <div class="footer-right"> <button type="button" onClick="favorite()"><img src="http://i.imgur.com/pUsG2BS.png" width="20px" height="20px"  draggable="false" "></div>
+            <div class="footer-right"> <button type="button" onClick="favoriteKC()"><img src="http://i.imgur.com/pUsG2BS.png" width="20px" height="20px"  draggable="false" "></div>
 
         </div>
     </div>
