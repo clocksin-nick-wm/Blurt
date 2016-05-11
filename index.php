@@ -36,6 +36,28 @@ $results = $stmt -> fetchAll();
         ?>
     </ul>
 </nav>
+<?php
+$dbh = new PDO ('mysql:host=localhost;dbname=blurtdb;', 'root', 'root');
+$query = "SELECT * FROM posts WHERE username IS NOT NULL ORDER BY post_time DESC";
+$stmt = $dbh ->prepare($query);
+$stmt ->execute();
+$data = $stmt->fetchAll();
+
+// Loop through the array of user data, formatting it as HTML
+echo '<h4>Blurt</h4>';
+echo '<table style="align-content: center; text-align: center">';
+foreach ($data as $row) {
+    if (isset($_SESSION['user_id'])) {
+        echo '<tr><td><a href="profile.php?user_id=' . $row['user_id'] . '">' . $row['username'] . '</a></td>';
+    } else {
+        echo '<tr><td>' . $row['username'] . '</td>';
+    }
+    echo '<td><p>'. $row['post'] .'</p></td>';
+}
+echo '</table>';
+
+?>
+?>
 
 <div class="feed-container">
     <div class="feed-border clearfix">
