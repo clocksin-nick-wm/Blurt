@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
            <a href="index.php"> <img src="Blurt.png" width="75px" height="50px"></a>
@@ -11,7 +11,7 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li ><a href="newpost.php"><span class="glyphicon glyphicon-edit"></span> Create Post</a></li>
-            <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout (<?php echo $_SESSION['username'] ?>)</a> </li>
+            <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a> </li>
         </ul>
     </div>
 </nav>

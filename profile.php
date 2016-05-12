@@ -77,7 +77,9 @@ foreach($data as $row){
                 <img src="http://cdn.shopify.com/s/files/1/0761/2225/t/8/assets/profileIconCustom.png?7584684197308184343" alt="" />
             </div>
             <div class="feed-content">
+                <a href="deletepost.php" style="text-align: right">X</a>
                 <div class="username"><p>@<?php echo $row['username']; ?></p></div>
+
                 <p><?php echo $row['post'] ?></p>
             </div>
         </div>

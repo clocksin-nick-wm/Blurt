@@ -29,6 +29,8 @@ $results = $stmt -> fetchAll();
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
+<div class="posts">
+
         <?php
         // Include navbar here
         include_once ('navbar.php');
@@ -45,9 +47,10 @@ foreach ($data as $row) {
 
 
 ?>
-
-
+<br />
+    <br />
 <div class="feed-container">
+
     <div class="feed-border clearfix">
         <div class="feed-options"><i class="fa fa-sort-desc"></i></div>
         <div class="feed-body clearfix">
@@ -123,12 +126,13 @@ foreach ($data as $row) {
         <!-- Testing code ends here-->
 
     </div>
-</div>
 
+</div>
     <?php
     }
 
     ?>
+    </div>
 </body>
 </html>
 
