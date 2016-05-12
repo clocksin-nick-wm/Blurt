@@ -55,8 +55,8 @@ foreach ($data as $row) {
                 <img src="http://cdn.shopify.com/s/files/1/0761/2225/t/8/assets/profileIconCustom.png?7584684197308184343" alt="" />
             </div>
             <div class="feed-content">
-                <div class="username"><a href="<?php echo 'profile.php?user_id=' . $row['user_id'] .' '; ?>"><p>@<?php echo $row->username; ?></p></a></div>
-                <p><?php echo $row->post ?></p>
+                <div class="username"><a href="<?php echo 'profile.php?user_id=' . $row['user_id'] .' '; ?>"><p>@<?php echo $row['username']; ?></p></a></div>
+                <p><?php echo $row['post'] ?></p>
             </div>
         </div>
 
