@@ -54,10 +54,10 @@ if (isset($_POST['submit'])) {
             // Only set the picture column if there is a new picture
             if (!empty($new_picture)) {
                 $query = "UPDATE users SET first_name = :first_name, last_name = :last_name, email = :email, " .
-                    "picture = :new_picture WHERE user_id = '" . $_SESSION['user_id'] . "'";
+                    "picture = :new_picture, description = :description WHERE user_id = '" . $_SESSION['user_id'] . "'";
             }
             else {
-                $query = "UPDATE users SET first_name = :first_name, last_name = :last_name, email = :email, " .
+                $query = "UPDATE users SET first_name = :first_name, last_name = :last_name, email = :email, description = :description, " .
                     "WHERE user_id = '" . $_SESSION['user_id'] . "'";
             }
             $stmt = $dbh ->prepare($query);
@@ -68,10 +68,8 @@ if (isset($_POST['submit'])) {
                 'new_picture' => $new_picture,
                 'description' => $description,
                 'user_id' => $_SESSION['user_id']));
-
-                $_SESSION['$description'] = $description;
             // Confirm success with the user
-            echo '<p>Your profile has been successfully updated. Would you like to <a href="viewprofile.php">view your profile</a>?</p>';
+            echo '<p>Your profile has been successfully updated. Would you like to <a href="profile.php">view your profile</a>?</p>';
 
             exit();
         }
@@ -96,7 +94,7 @@ if (isset($_POST['submit'])) {
                 <label for="lastname">Last name:</label>
                 <input type="text" id="lastname" name="lastname" value="<?php if (!empty($last_name)) echo $last_name; ?>"/><br/>
                 <label for="email">Email:</label>
-                <input type="email" id="email" value="<?php if(!empty($email))  echo $email; ?>">
+                <input type="email" id="email" name="email" value="<?php if(!empty($email))  echo $email; ?>">
                 <input type="hidden" name="old_picture" value="<?php if (!empty($old_picture)) echo $old_picture; ?>"/>
                 <br>
                 <label for="new_picture">Picture:</label>
@@ -105,7 +103,7 @@ if (isset($_POST['submit'])) {
                     echo '<img class="profile" src="' . MM_UPLOADPATH . $old_picture . '" alt="Profile Picture" />';
                 } ?>
                 <label for="description">Description:</label>
-                <input type="text" id="description" value="<?php if(!empty($description)) echo $description; ?>">
+                <input type="text" id="description" name="description" value="<?php if(!empty($description)) echo $description; ?>">
             </fieldset>
             <input type="submit" value="Save Profile" name="submit"/>
         </form>
