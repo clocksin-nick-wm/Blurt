@@ -1,11 +1,10 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <img src="Blurt.png" width="75px" height="50px">
+           <a href="index.php"> <img src="Blurt.png" width="75px" height="50px"></a>
         </div>
         <ul class="nav navbar-nav">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="profile.php"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+            <li><a href="profile.php"><span class="glyphicon glyphicon-user"></span> <?php echo $_SESSION['username'] ?></a></li>
             <li><a href="editprofile.php"><span class="glyphicon glyphicon-pencil"></span> Edit Profile</a></li>
             <li><a href="chat.php">Chat</a> </li>
             <li><a href="notif.html">Notifications</a> </li>
