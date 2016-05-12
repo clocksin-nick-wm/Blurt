@@ -44,7 +44,7 @@ $stmt ->execute();
 $data = $stmt->fetchAll();
 
 // Loop through the array of user data, formatting it as HTML
-echo '<h4>Blurt</h4>';
+
 echo '<table style="align-content: center; text-align: center">';
 foreach ($data as $row) {
     if (isset($_SESSION['user_id'])) {
@@ -57,7 +57,7 @@ foreach ($data as $row) {
 echo '</table>';
 
 ?>
-?>
+
 
 <div class="feed-container">
     <div class="feed-border clearfix">
@@ -82,13 +82,14 @@ echo '</table>';
                 <span class="footer-time"><script type="text/javascript">
                         function favoriteOK(){
                             var click = 0;
+                            favorited = false;
                             if(click === 0 || favorited == false){
                                 click += 1;
                                 favorited = true;
                                 document.getElementById("Fclicksok").innerHTML = click;
 
                             }
-                            else{
+                            else if(click === 1 || favorited == true) {
                                 click -= 1;
                                 favorited = false;
                                 document.getElementById("Fclicksok").innerHTML = click;
