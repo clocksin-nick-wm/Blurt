@@ -13,12 +13,12 @@ $error_msg = "";
 
     if (isset($_POST['submit'])) {
 
-        // Connect to the database
-        $dbh = new PDO('mysql:host=localhost; dbname=blurtdb', 'root', 'root');
+// Connect to the database
+        $dbh = new PDO('mysql:host=127.0.0.1; dbname=blurtdb', 'root', 'root');
 
-        // Grab the user-entered log-in data
+// Grab the user-entered log-in data
         $username = trim($_POST['username']);
-        $password =trim($_POST['password']);
+        $password = trim($_POST['password']);
 
         if (!empty($username) && !empty($password)) {
 
@@ -65,18 +65,16 @@ $error_msg = "";
             $error_msg = 'Sorry, you must enter your username and password to log in.';
         }
 
-
-}
-
+    }
 ?>
 
 <!DOCTYPE html>
-    <html>
+<html>
 <head>
     <title>Blurt <?php echo $page_title ?></title>
 </head>
 <body>
-<form>
+<form method="post" action="<?php $_SERVER['PHP_SELF']; ?>">
     <fieldset>
         <label for="username">Username:</label>
         <input type="text" name="username" id="username">
@@ -86,6 +84,7 @@ $error_msg = "";
     </fieldset>
 </form>
 <?php
+
 ?>
 </body>
 </html>
