@@ -1,6 +1,7 @@
 <?php
 $page_title = 'Login Page/Sign Up';
 $dbh = new PDO('mysql:host=localhost;dbname=blurtdb;', 'root', 'root');
+
 require_once('start_session.php');
 
 
@@ -14,7 +15,7 @@ if (!isset($_SESSION['user_id'])) {
     if (isset($_POST['login'])) {
 
         // Connect to the database
-        $dbh = new PDO('mysql:host=127.0.0.1; dbname=blurtdb', 'root', 'root');
+        $dbh = new PDO('mysql:host=localhost; dbname=blurtdb', 'root', 'root');
 
         // Grab the user-entered log-in data
         $username = trim($_POST['username']);
@@ -133,8 +134,6 @@ if (isset($_POST['signup'])) {
         ));
         // if successful in inputting data into database success code will run
         if ($results) {
-
-
         } else {
             // if theres an error then it will not run
             echo '<p>There was an error in the form that you entered</p>';
@@ -169,7 +168,6 @@ if (isset($_POST['signup'])) {
     </form>
 </div>
 <footer>
-<!-- Footer -->
 </footer>
 <?php
 }

@@ -10,7 +10,7 @@
 </head>
 <body>
 <div class="menu">
-    <div class="back"><i class="fa fa-chevron-left"></i> <img src="http://i.imgur.com/ONiOKeA.png" draggable="false"/></div>
+    <div class="back"><a href="index.php" style="color:white;"><i class="fa fa-chevron-left"></i> <img src="http://i.imgur.com/ONiOKeA.png" draggable="false"/></a></div>
     <div class="name"><i>@draculad</i></div>
     <div class="last">9:22 P.M.</div>
 </div>

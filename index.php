@@ -28,9 +28,13 @@ $results = $stmt -> fetchAll();
     <!-- Latest compiled JavaScript -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
+<<<<<<< HEAD
+<body style="background-color: rgb(34, 104, 195)">
+=======
 <body>
 <div class="posts">
 
+>>>>>>> 1fc8b3c6db0938581e0f40db4361414e776bdd04
         <?php
         // Include navbar here
         include_once ('navbar.php');
@@ -67,7 +71,6 @@ foreach ($data as $row) {
             </div>
         </div>
 
-        <!-- Testing out the favorite button to see if i can add a counter to it so the user can like it-->
 
         <div class="feed-footer clearfix">
             <div class="footer-left">
@@ -75,42 +78,42 @@ foreach ($data as $row) {
 
 
                 <span class="footer-time"><script type="text/javascript">
-                        function favoriteOK(){
+                        function favorite(){
                             var click = 0;
                             if(click === 0 || favorited == false){
                                 click += 1;
                                 favorited = true;
-                                document.getElementById("Fclicksok").innerHTML = click;
+                                document.getElementById("favoriteClick").innerHTML = click;
 
                             }
                             else{
                                 click -= 1;
                                 favorited = false;
-                                document.getElementById("Fclicksok").innerHTML = click;
+                                document.getElementById("favoriteClick").innerHTML = click;
 
                             }
                         }
 
                     </script>Favorite:</span>
 
-                    <a id="Fclicksok">&nbsp;0</a>
+                    <a id="favoriteClick">&nbsp;0</a>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
                 <span class="footer-time"><script type="text/javascript">
-                        function repostOK(){
+                        function repost(){
                             var click = 0;
                             if(click === 0 || favorited == false){
                                 click += 1;
                                 favorited = true;
-                                document.getElementById("Rclicksok").innerHTML = click;
+                                document.getElementById("repostClick").innerHTML = click;
 
                             }
                             else{
                                 click -= 1;
                                 favorited = false;
-                                document.getElementById("Rclicksok").innerHTML = click;
+                                document.getElementById("repostClick").innerHTML = click;
 
                             }
                         }
@@ -118,16 +121,16 @@ foreach ($data as $row) {
                     </script>Resposts:</span>
             </div>
 
-            <a id="Rclicksok">0</a>
+            <a id="repostClick">0</a>
 
 
-            <div class="footer-right"> <button type="button" onClick="repostOK()"><img src="http://i.imgur.com/A9qM0Vz.png" width="20px" height="20px"  draggable="false" "></div>
+            <div class="footer-right"> <button type="button" onClick="repost()"><img src="http://i.imgur.com/A9qM0Vz.png" width="20px" height="20px"  draggable="false" "></div>
 
-            <div class="footer-right"> <button type="button" onClick="favoriteOK()"><img src="http://i.imgur.com/pUsG2BS.png" width="20px" height="20px"  draggable="false" "></div>
+            <div class="footer-right"> <button type="button" onClick="favorite()"><img src="http://i.imgur.com/pUsG2BS.png" width="20px" height="20px"  draggable="false" "></div>
 
         </div>
 
-        <!-- Testing code ends here-->
+
 
     </div>
 
