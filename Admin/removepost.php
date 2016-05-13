@@ -1,10 +1,8 @@
 <?php
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Blurt Remove User</title>
 </head>
 <body>
@@ -26,7 +24,7 @@ else {
 if (isset($_POST['submit'])) {
     if ($_POST['confirm'] == 'Yes') {
         // Connect to the database
-        $dbh = new PDO('mysql:host=localhost;dbname=blurtdb', 'root', 'root');
+        $dbh = new PDO('mysql:host=localhost;dbname=blurtdb;', 'root', 'root');
 
         // Delete the score data from the database
         $query = "DELETE FROM posts WHERE id = $id LIMIT 1";
@@ -39,7 +37,7 @@ if (isset($_POST['submit'])) {
         echo '<p>'. $post .' was successfully deleted from Blurt</p>';
     }
     else {
-        echo '<p class="error">The Post was not removed</p>';
+        echo '<p class="error">The post was not removed</p>';
     }
 }
 else if (isset($id) && isset($post) && isset($user_id) && isset($username) && isset($post_time)){
