@@ -133,8 +133,6 @@ if (isset($_POST['signup'])) {
         ));
         // if successful in inputting data into database success code will run
         if ($results) {
-
-
         } else {
             // if theres an error then it will not run
             echo '<p>There was an error in the form that you entered</p>';
@@ -169,7 +167,6 @@ if (isset($_POST['signup'])) {
     </form>
 </div>
 <footer>
-<!-- Footer -->
 </footer>
 <?php
 }
