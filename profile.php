@@ -2,7 +2,8 @@
 include('start_session.php');
 include_once('authenticate.php');
 include('bootstrap.php');
-include_once('navbar.php');
+include('navbar.php');
+
 //Connect to database
 $dbh = new PDO('mysql:host=localhost;dbname=blurtdb', 'root', 'root');
 if(isset($_SESSION['id'])){
@@ -34,7 +35,7 @@ foreach ($data as $row) {
     //$row = $data[0];
     echo '<table>';
     if (!empty($row['username'])) {
-        echo '<tr><td >Username: </td><td>' . $row['username'] . '</td></tr>';
+        echo '<tr"><td><br><br><br>Username: </td><td><br><br><br>' . $row['username'] . '</td></tr>';
     }
     if (!empty($row['first_name'])) {
         echo '<tr><td>First name: </td><td>' . $row['first_name'] . '</td></tr>';
@@ -42,10 +43,6 @@ foreach ($data as $row) {
 
     if (!empty($row['description'])) {
         echo '<tr><td>Description:</td><td>' . $row['description'] . '</td></tr>';
-    }
-    if (!empty($row['picture'])) {
-        echo '<tr><td class="label">Picture:</td><td><img src="' . MM_UPLOADPATH . $row['picture'] .
-            '" alt="Profile Picture" /></td></tr>';
     }
     echo '</table>';
     if (!isset($_GET['user_id']) || ($_SESSION['user_id'] == $_GET['user_id'])) {

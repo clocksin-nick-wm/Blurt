@@ -1,6 +1,7 @@
 <?php
 $page_title = 'Login Page/Sign Up';
 $dbh = new PDO('mysql:host=localhost;dbname=blurtdb;', 'root', 'root');
+
 require_once('start_session.php');
 
 
@@ -14,7 +15,7 @@ if (!isset($_SESSION['user_id'])) {
     if (isset($_POST['login'])) {
 
         // Connect to the database
-        $dbh = new PDO('mysql:host=127.0.0.1; dbname=blurtdb', 'root', 'root');
+        $dbh = new PDO('mysql:host=localhost; dbname=blurtdb', 'root', 'root');
 
         // Grab the user-entered log-in data
         $username = trim($_POST['username']);
