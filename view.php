@@ -5,16 +5,16 @@ include('bootstrap.php');
 include_once('navbar.php');
 //Connect to database
 $dbh = new PDO('mysql:host=localhost;dbname=blurtdb', 'root', 'root');
-if(isset($_SESSION['id'])){
+if(isset($_GET['id'])){
     // If session select user information
-    $query = "SELECT * FROM users WHERE id = '" . $_SESSION['user_id'] . "'";
+    $query = "SELECT * FROM users WHERE id = '" . $_GET['user_id'] . "'";
     $stmt = $dbh -> prepare($query);
     $stmt -> execute();
     $data = $stmt -> fetchAll();
 }
 
 if (!isset($_GET['user_id'])) {
-    $query = "SELECT username, first_name, last_name, description FROM users WHERE id = '" . $_SESSION['user_id'] . "'";
+    $query = "SELECT username, first_name, last_name, description FROM users WHERE id = '" . $_GET['user_id'] . "'";
     $stmt = $dbh -> prepare($query);
     $stmt -> execute();
     $data = $stmt -> fetchAll();
@@ -63,7 +63,7 @@ foreach ($data as $row) {
 <body>
 <?php
 $dbh = new PDO ('mysql:host=localhost;dbname=blurtdb;', 'root', 'root');
-$query = "SELECT * FROM posts WHERE user_id = '" . $_SESSION['user_id'] .  "' ORDER BY post_time DESC";
+$query = "SELECT * FROM posts WHERE user_id = '" . $_GET['user_id'] .  "' ORDER BY post_time DESC";
 $stmt = $dbh ->prepare($query);
 $stmt ->execute();
 $data = $stmt->fetchAll();
