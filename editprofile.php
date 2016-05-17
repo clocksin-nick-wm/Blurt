@@ -57,13 +57,12 @@ if (isset($_POST['submit'])) {
                 <label for="lastname">Last name:</label>
                 <input type="text" id="lastname" name="lastname" value="<?php if (!empty($last_name)) echo $last_name; ?>"/><br/>
                 <label for="username">Username:</label>
-                <input name="">
+                <input name="username" type="text" id="username" value="<?php if(!empty($username)) echo $username ?>"/><br />
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" value="<?php if(!empty($email))  echo $email; ?>">
                 <br />
                 <label for="description">Description:</label><br />
                 <textarea name="description">
-                    <?php if(!empty($description)) echo $description; ?>
                 </textarea>
             </fieldset>
             <input type="submit" value="Save Profile" name="submit"/>

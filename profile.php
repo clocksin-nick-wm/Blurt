@@ -15,7 +15,7 @@ if(isset($_SESSION['id'])){
 }
 
 if (!isset($_GET['user_id'])) {
-    $query = "SELECT username, first_name, last_name, description FROM users WHERE id = '" . $_SESSION['user_id'] . "'";
+    $query = "SELECT username, description FROM users WHERE id = '" . $_SESSION['user_id'] . "'";
     $stmt = $dbh -> prepare($query);
     $stmt -> execute();
     $data = $stmt -> fetchAll();
@@ -23,7 +23,7 @@ if (!isset($_GET['user_id'])) {
     //print_r($error);
 }
 else {
-    $query = "SELECT username, first_name, , description FROM users WHERE id = '" . $_GET['user_id'] . "'";
+    $query = "SELECT username, description FROM users WHERE id = '" . $_GET['user_id'] . "'";
     $stmt = $dbh -> prepare($query);
     $stmt -> execute();
     $data = $stmt -> fetchAll();
@@ -31,34 +31,30 @@ else {
 //$_SESSION['id'] = 1;
 //echo $_SESSION['id'] . "<- session";
 foreach ($data as $row) {
-    // The user row was found so display the user data
-    //$row = $data[0];
-    echo '<table>';
-    if (!empty($row['username'])) {
-        echo '<tr"><td><br><br><br>Username: </td><td><br><br><br>' . $row['username'] . '</td></tr>';
-    }
-    if (!empty($row['first_name'])) {
-        echo '<tr><td>First name: </td><td>' . $row['first_name'] . '</td></tr>';
-    }
-
-    if (!empty($row['description'])) {
-        echo '<tr><td>Description:</td><td>' . $row['description'] . '</td></tr>';
-    }
-    echo '</table>';
-    if (!isset($_GET['user_id']) || ($_SESSION['user_id'] == $_GET['user_id'])) {
-        echo '<p>Would you like to <a href="editprofile.php">edit your profile</a>?</p>';
-    }
-} // End of check for a single row of user results
 
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <title><?php echo $_SESSION['username']; ?>'s Profile</title>
+    <link rel="stylesheet" href="profile.css" type="text/css">
     <link rel="stylesheet" href="index.css" type="text/css">
 </head>
 <body>
-<?php
+<div class="user-profile">
+    <img class="avatar" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTF_erFD1SeUnxEpvFjzBCCDxLvf-wlh9ZuPMqi02qGnyyBtPWdE-3KoH3s" alt="Ash" />
+    <div class="username"><?php echo $row['username'];?></div>
+    <div class="bio">
+
+    </div>
+    <div class="description">
+        <?php
+        echo $row['description'];
+        ?>
+    </div>
+</div>
+    <?php
+    }
 $dbh = new PDO ('mysql:host=localhost;dbname=blurtdb;', 'root', 'root');
 $query = "SELECT * FROM posts WHERE user_id = '" . $_SESSION['user_id'] .  "' ORDER BY post_time DESC";
 $stmt = $dbh ->prepare($query);
