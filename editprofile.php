@@ -10,6 +10,7 @@ if (isset($_POST['submit'])) {
     $last_name = $_POST['lastname'];
     $email = $_POST['email'];
     $description = $_POST['description'];
+    $username = $_POST['username'];
     $error = false;
 
 
@@ -18,10 +19,10 @@ if (isset($_POST['submit'])) {
         if (!empty($first_name) && !empty($last_name) && !empty($email) && !empty($description)) {
             // Only set the picture column if there is a new picture
             if (!empty($new_picture)) {
-                $query = "UPDATE users SET first_name = :first_name, last_name = :last_name, email = :email, description = :description WHERE id = :user_id";
+                $query = "UPDATE users SET first_name = :first_name, last_name = :last_name, email = :email, description = :description, username = :username WHERE id = :user_id";
             }
             else {
-                $query = "UPDATE users SET first_name = :first_name, last_name = :last_name, email = :email, description = :description WHERE id = :user_id";
+                $query = "UPDATE users SET first_name = :first_name, last_name = :last_name, email = :email, description = :description, username = :username WHERE id = :user_id";
             }
             $stmt = $dbh->prepare($query);
             $stmt->execute(array(
@@ -29,6 +30,7 @@ if (isset($_POST['submit'])) {
                 'last_name' => $last_name,
                 'email' => $email,
                 'description' => $description,
+                'username' => $username,
                 'user_id' => $_SESSION['user_id']
             ));
             // Confirm success with the user
@@ -54,11 +56,15 @@ if (isset($_POST['submit'])) {
                 <input type="text" id="firstname" name="firstname" value="<?php if (!empty($first_name)) echo $first_name; ?>"/><br/>
                 <label for="lastname">Last name:</label>
                 <input type="text" id="lastname" name="lastname" value="<?php if (!empty($last_name)) echo $last_name; ?>"/><br/>
+                <label for="username">Username:</label>
+                <input name="">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" value="<?php if(!empty($email))  echo $email; ?>">
-                <br>
-                <label for="description">Description:</label>
-                <input type="text" id="description" name="description" value="<?php if(!empty($description)) echo $description; ?>">
+                <br />
+                <label for="description">Description:</label><br />
+                <textarea name="description">
+                    <?php if(!empty($description)) echo $description; ?>
+                </textarea>
             </fieldset>
             <input type="submit" value="Save Profile" name="submit"/>
         </form>
