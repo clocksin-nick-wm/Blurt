@@ -65,7 +65,7 @@ $stmt = $dbh ->prepare($query);
 $stmt ->execute();
 $data = $stmt->fetchAll();
 foreach($data as $row){
-?><br><br>
+?>
 <div class="feed-container">
     <div class="feed-border clearfix">
         <div class="feed-options"><i class="fa fa-sort-desc"></i></div>
