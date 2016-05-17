@@ -28,13 +28,10 @@ $results = $stmt -> fetchAll();
     <!-- Latest compiled JavaScript -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
-<<<<<<< HEAD
 <body style="background-color: rgb(34, 104, 195)">
-=======
-<body>
+
 <div class="posts">
 
->>>>>>> 1fc8b3c6db0938581e0f40db4361414e776bdd04
         <?php
         // Include navbar here
         include_once ('navbar.php');
@@ -98,7 +95,7 @@ foreach ($data as $row) {
 
                     <a id="favoriteClick">&nbsp;0</a>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 
 
                 <span class="footer-time"><script type="text/javascript">
