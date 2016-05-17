@@ -81,6 +81,8 @@ foreach($data as $row){
                 <p><?php echo $row['post'] ?></p>
             </div>
         </div>
+        </div>
+    </div>
         <?php
         }
         ?>

@@ -18,10 +18,10 @@ if (isset($_POST['submit'])) {
         if (!empty($first_name) && !empty($last_name) && !empty($email) && !empty($description)) {
             // Only set the picture column if there is a new picture
             if (!empty($new_picture)) {
-                $query = "UPDATE users SET first_name = :first_name, last_name = :last_name, email = :email, description = :description WHERE id = '" . $_SESSION['user_id'] . "'";
+                $query = "UPDATE users SET first_name = :first_name, last_name = :last_name, email = :email, description = :description WHERE id = :user_id";
             }
             else {
-                $query = "UPDATE users SET first_name = :first_name, last_name = :last_name, email = :email, description = :description WHERE id = '" . $_SESSION['user_id'] . "'";
+                $query = "UPDATE users SET first_name = :first_name, last_name = :last_name, email = :email, description = :description WHERE id = :user_id";
             }
             $stmt = $dbh->prepare($query);
             $stmt->execute(array(

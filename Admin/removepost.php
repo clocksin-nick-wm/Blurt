@@ -1,5 +1,3 @@
-<?php
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,11 +9,11 @@
 <?php
 
 if (isset($_GET['id']) && isset($_GET['username']) && isset($_GET['post']) && isset($_GET['user_id']) && isset($_GET['post_time'])){
-    $id = $_POST['id'];
-    $post = $_POST['post'];
-    $user_id = $_POST['user_id'];
-    $username = $_POST['username'];
-    $post_time = $_POST['post_time'];
+    $id = $_GET['id'];
+    $post = $_GET['post'];
+    $user_id = $_GET['user_id'];
+    $username = $_GET['username'];
+    $post_time = $_GET['post_time'];
 }
 else {
     echo '<p class="error">Sorry, no post was specified for removal.</p>';
@@ -27,10 +25,10 @@ if (isset($_POST['submit'])) {
         $dbh = new PDO('mysql:host=localhost;dbname=blurtdb;', 'root', 'root');
 
         // Delete the score data from the database
-        $query = "DELETE FROM posts WHERE id = $id LIMIT 1";
+        $query = "DELETE FROM posts WHERE id = :id LIMIT 1";
 
         $stmt = $dbh->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array('id'=>$_POST['id']));
         $score = $stmt->fetchAll();
 
         // Confirm success with the user
@@ -43,7 +41,7 @@ if (isset($_POST['submit'])) {
 else if (isset($id) && isset($post) && isset($user_id) && isset($username) && isset($post_time)){
     echo '<p>Are you sure you want to delete the following high score?</p>';
     echo '<p><strong>Post: </strong>' . $post . '<br /><strong>Username: </strong>' . $username .'</p>';
-    echo '<form method="post" action="removeusers.php">';
+    echo '<form method="post" action="removepost.php">';
     echo '<input type="radio" name="confirm" value="Yes" /> Yes ';
     echo '<input type="radio" name="confirm" value="No" checked="checked" /> No <br />';
     echo '<input type="submit" value="Submit" name="submit" />';
@@ -53,7 +51,7 @@ else if (isset($id) && isset($post) && isset($user_id) && isset($username) && is
     echo '</form>';
 }
 
-echo '<p><a href="adminusers.php">&lt;&lt; Back to admin page</a></p>';
+echo '<p><a href="admin%20posts.php">&lt;&lt; Back to admin page</a></p>';
 ?>
 ​
 </body>

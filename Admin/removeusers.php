@@ -13,16 +13,13 @@
 <?php
 
 if (isset($_GET['id']) && isset($_GET['username']) && isset($_GET['first_name']) && isset($_GET['last_name']) && isset($_GET['password']) && isset($_GET['email']) && isset($_GET['description'])){
-    $id = $_POST['id'];
-    $name = $_POST['first_name'];
-    $score = $_POST['last_name'];
-    $email = $_POST['email'];
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $description = $_POST['description'];
-}
-else {
-    echo '<p class="error">Sorry, no high score was specified for removal.</p>';
+    $id = $_GET['id'];
+    $name = $_GET['first_name'];
+    $score = $_GET['last_name'];
+    $email = $_GET['email'];
+    $username = $_GET['username'];
+    $password = $_GET['password'];
+    $description = $_GET['description'];
 }
 
 if (isset($_POST['submit'])) {
@@ -31,20 +28,20 @@ if (isset($_POST['submit'])) {
         $dbh = new PDO('mysql:host=localhost;dbname=blurtdb', 'root', 'root');
 
         // Delete the score data from the database
-        $query = "DELETE FROM users WHERE id = $id LIMIT 1";
+        $query = "DELETE FROM users WHERE id = :id LIMIT 1";
 
         $stmt = $dbh->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array('id'=>$_POST['id']));
         $score = $stmt->fetchAll();
 
         // Confirm success with the user
-        echo '<p>'.$username .' was successfully deleted from Blurt</p>';
+        echo '<p>User was successfully deleted from Blurt</p>';
     }
     else {
         echo '<p class="error">The high score was not removed.</p>';
     }
 }
-else if (isset($id) && isset($name) && isset($date) && isset($score)) {
+else if (isset($id) && isset($name) && isset($score)) {
     echo '<p>Are you sure you want to delete the following high score?</p>';
     echo '<p><strong>Name: </strong>' . $name . '<br /><strong>Username: </strong>' . $username .
         '<br /><strong>Email: </strong>' . $email . '</p>';
@@ -55,6 +52,7 @@ else if (isset($id) && isset($name) && isset($date) && isset($score)) {
     echo '<input type="hidden" name="id" value="' . $id . '" />';
     echo '<input type="hidden" name="name" value="' . $name . '" />';
     echo '<input type="hidden" name="score" value="' . $score . '" />';
+    echo '<input type="hidden" name="username" value="' . $username .'"/>';
     echo '</form>';
 }
 
