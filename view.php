@@ -34,15 +34,14 @@ foreach ($data as $row) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?php echo $_SESSION['username']; ?>'s Profile</title>
+    <title><?php echo $_GET['username']; ?>'s Profile</title>
+    <link rel="stylesheet" href="profile.css" type="text/css">
     <link rel="stylesheet" href="index.css" type="text/css">
 </head>
 <body>
 <div class="user-profile">
-    <img class="avatar"
-         src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTF_erFD1SeUnxEpvFjzBCCDxLvf-wlh9ZuPMqi02qGnyyBtPWdE-3KoH3s"
-         alt="Ash"/>
-    <div class="username"><?php echo $row['username']; ?></div>
+    <img class="avatar" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTF_erFD1SeUnxEpvFjzBCCDxLvf-wlh9ZuPMqi02qGnyyBtPWdE-3KoH3s" alt="Ash" />
+    <div class="username"><?php echo $row['username'];?></div>
     <div class="bio">
 
     </div>
@@ -52,6 +51,7 @@ foreach ($data as $row) {
         ?>
     </div>
 </div>
+<br />
 <?php
 }
 $dbh = new PDO ('mysql:host=localhost;dbname=blurtdb;', 'root', 'root');

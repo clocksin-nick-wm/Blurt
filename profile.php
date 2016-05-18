@@ -42,7 +42,7 @@ foreach ($data as $row) {
 </head>
 <body>
 <div class="user-profile">
-    <img class="avatar" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTF_erFD1SeUnxEpvFjzBCCDxLvf-wlh9ZuPMqi02qGnyyBtPWdE-3KoH3s" alt="Ash" />
+    <img class="avatar" src="https://beagamecharacter.com/wp-content/uploads/2013/02/Master-Chief-in-Halo-854x960.jpg" alt="Ash" />
     <div class="username"><?php echo $row['username'];?></div>
     <div class="bio">
 

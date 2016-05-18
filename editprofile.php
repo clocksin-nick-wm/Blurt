@@ -2,6 +2,7 @@
 include ('start_session.php');
 include_once('authenticate.php');
 require('variables.php');
+
 $dbh = new PDO('mysql:host=localhost;dbname=blurtdb', 'root', 'root');
 
 if (isset($_POST['submit'])) {
@@ -43,7 +44,11 @@ if (isset($_POST['submit'])) {
     }
 }
 ?>
+<!DOCTYPE html>
 <html>
+<head>
+    <title>Edit <?php echo $_SESSION['username'] ?>'s Profile</title>
+</head>
     <body style="background-color: #19bbfd;}">
     <?php
     include('navbar.php');

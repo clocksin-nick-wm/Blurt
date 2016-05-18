@@ -24,51 +24,14 @@ $dbh = new PDO ('mysql:host=localhost;dbname=blurtdb', 'root', 'root');
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body style="background-color: rgb(34, 104, 195)">
-<?php
-$query = "SELECT * FROM users WHERE id = '" . $_SESSION['user_id'] . "'";
-$stmt = $dbh -> prepare($query);
-$results = $stmt -> fetchAll();
-foreach($results as $row){
-?>
-<div class="user-profile" style="position:fixed;">
-    <img class="avatar"
-         src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTF_erFD1SeUnxEpvFjzBCCDxLvf-wlh9ZuPMqi02qGnyyBtPWdE-3KoH3s"
-         alt="Ash"/>
-    <div class="username"><?php echo $row['username']; ?></div>
-    <div class="bio">
-
-    </div>
-    <div class="description">
-        <?php
-        echo $row['description'];
-        ?>
-    </div>
-</div>
-<style>
-    #navbar {
-        position: relative;
-        top:0%;
-        left:0%;
-
-
-
-
-    }
-
-
-
-
-</style>
-
 <div class="posts">
 
     <?php
-    }
+
         // Include navbar here
         include_once ('navbar.php');
         ?>
 <?php
-$dbh = new PDO ('mysql:host=localhost;dbname=blurtdb;', 'root', 'root');
 $query = "SELECT * FROM posts WHERE username IS NOT NULL ORDER BY post_time DESC";
 $stmt = $dbh ->prepare($query);
 $stmt ->execute();
@@ -172,19 +135,37 @@ foreach ($data as $row) {
       background-color: #fefbfb;
         color: #FFFFFF;
         width:25%;
-        height:100%;
         position: fixed;
         top:0%;
         border-radius:10px;
-
+        align-content: center;
+        text-align: center;
 
 
     }
 </style>
 
     <div id="sideNav">
-       <h1>HELLO</h1>
+        <a href="profile.php">
+        <img class="img-circle person" src="https://beagamecharacter.com/wp-content/uploads/2013/02/Master-Chief-in-Halo-854x960.jpg" alt="Ash" width="200px" height="200px"/>
+        </a>
+        <h1 style="color: black"><?php echo $_SESSION['username']?></h1>
 
+        <?php
+        $dbh = new PDO ('mysql:host=localhost;dbname=blurtdb', 'root', 'root');
+       $query2 = "SELECT description FROM users WHERE user_id = '". $_SESSION['user_id'] ."'";
+        $stmt = $dbh->prepare($query2);
+        $stmt -> execute();
+        $result = $stmt -> fetchAll();
+        foreach($result as $row1){
+            ?>
+        <p style="color: black">thing here<?php echo $row1['description'] ?></p>
+
+            <?php
+        }
+        ?>
+        <p style="color: gainsboro;">Halo Ruelz</p>
+        <
     </div>
 </body>
 </html>
