@@ -5,7 +5,10 @@
 [class*="entypo-"]:before {
     font-family: 'entypo', sans-serif;
 }
+body{
+    background-color: #19bbfd;
 
+}
 
 .title-pen {
     color: #333;

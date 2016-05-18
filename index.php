@@ -7,11 +7,6 @@ $page_title = "Homepage";
 // connect to post databse to create a table for all posts
 $dbh = new PDO ('mysql:host=localhost;dbname=blurtdb', 'root', 'root');
 // If the session vars aren't set, try to set them with a cookie
-$query = "SELECT username, post_id, post FROM posts WHERE username IS NOT NULL ORDER BY id DESC";
-$stmt = $dbh -> prepare($query);
-$stmt -> execute();
-$results = $stmt -> fetchAll();
-
 ?>
 
 <!DOCTYPE html>
@@ -29,10 +24,46 @@ $results = $stmt -> fetchAll();
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body style="background-color: rgb(34, 104, 195)">
+<?php
+$query = "SELECT * FROM users WHERE id = '" . $_SESSION['user_id'] . "'";
+$stmt = $dbh -> prepare($query);
+$results = $stmt -> fetchAll();
+foreach($results as $row){
+?>
+<div class="user-profile" style="position:fixed;">
+    <img class="avatar"
+         src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTF_erFD1SeUnxEpvFjzBCCDxLvf-wlh9ZuPMqi02qGnyyBtPWdE-3KoH3s"
+         alt="Ash"/>
+    <div class="username"><?php echo $row['username']; ?></div>
+    <div class="bio">
+
+    </div>
+    <div class="description">
+        <?php
+        echo $row['description'];
+        ?>
+    </div>
+</div>
+<style>
+    #navbar {
+        position: relative;
+        top:0%;
+        left:0%;
+
+
+
+
+    }
+
+
+
+
+</style>
 
 <div class="posts">
 
-        <?php
+    <?php
+    }
         // Include navbar here
         include_once ('navbar.php');
         ?>
@@ -50,7 +81,7 @@ foreach ($data as $row) {
 ?>
 <br />
     <br />
-<div class="feed-container">
+<div id="'navbar" class="feed-container">
 
     <div class="feed-border clearfix">
         <div class="feed-options"><i class="fa fa-sort-desc"></i></div>
@@ -117,7 +148,6 @@ foreach ($data as $row) {
 
                     </script>Resposts:</span>
             </div>
-
             <a id="repostClick">0</a>
 
 
@@ -136,6 +166,25 @@ foreach ($data as $row) {
     }
 
     ?>
+    </div>
+<style>
+    #sideNav{
+      background-color: #fefbfb;
+        color: #FFFFFF;
+        width:25%;
+        height:100%;
+        position: fixed;
+        top:0%;
+        border-radius:10px;
+
+
+
+    }
+</style>
+
+    <div id="sideNav">
+       <h1>HELLO</h1>
+
     </div>
 </body>
 </html>

@@ -18,11 +18,9 @@
 .nav-bar .nav-button-notif a { background:url("") no-repeat 0px -2px transparent;
 
 }
+body{
+    background-color: #19bbfd;
 
-body {
-    font-family: 'gravity';
-    color: #858585;
-    background: #b5e5e8;
 }
 
 @font-face {

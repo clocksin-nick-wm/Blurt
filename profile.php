@@ -53,6 +53,7 @@ foreach ($data as $row) {
         ?>
     </div>
 </div>
+<br />
     <?php
     }
 $dbh = new PDO ('mysql:host=localhost;dbname=blurtdb;', 'root', 'root');

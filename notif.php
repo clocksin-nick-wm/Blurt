@@ -1,3 +1,9 @@
+<?php
+include('start_session.php');
+include_once('authenticate.php');
+include('bootstrap.php');
+include('navbar.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,13 +12,7 @@
     <link rel="stylesheet" href="notif.css">
 </head>
 <body>
-<nav id="main-menu">
-    <ul class="nav-bar">
-        <li class="nav-button-home"><a href="index.php">Home</a></li>
-        <li class="nav-button-chat"><a href="recent%20chat.html">Chat</a></li>
-        <li class="nav-button-notif"><a href="notif.html">Notifications</a></li>
-    </ul>
-</nav>
+
 <div class="container">
     <section class="notif notif-notice">
         <h1 class="notif-title"><i>@draculad</i> followed you!</h1>

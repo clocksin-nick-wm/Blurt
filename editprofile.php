@@ -44,7 +44,7 @@ if (isset($_POST['submit'])) {
 }
 ?>
 <html>
-    <body>
+    <body style="background-color: #19bbfd;}">
     <?php
     include('navbar.php');
     include('bootstrap.php');
