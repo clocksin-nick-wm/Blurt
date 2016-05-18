@@ -133,7 +133,7 @@ foreach ($data as $row) {
 <style>
     #sideNav{
       background-color: #fefbfb;
-        color: #FFFFFF;
+        color: #858383;
         width:25%;
         position: fixed;
         top:0%;
@@ -164,8 +164,7 @@ foreach ($data as $row) {
             <?php
         }
         ?>
-        <p style="color: gainsboro;">Halo Ruelz</p>
-        <
+        <p>Halo Ruelz</p>
     </div>
 </body>
 </html>
