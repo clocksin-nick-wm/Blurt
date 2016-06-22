@@ -1,6 +1,6 @@
 <?php
 $page_title = "Admin User";
-
+require_once('authorize.php');
 
 ?>
 <!DOCTYPE html>

@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default">
     <div  class="container-fluid">
         <div class="navbar-header">
-           <a href="index.php"> <img style="position: relative; left:550%;" src="Blurt.png" width="75px" height="50px"></a>
+           <a href="index.php"> <img style="position: relative; left:520%;" src="Blurt.png" width="75px" height="50px"></a>
         </div>
         <ul style="position: relative; left:30%;" class="nav navbar-nav">
             <li><a href="profile.php"><span class="glyphicon glyphicon-user"></span> <?php echo $_SESSION['username'] ?></a></li>

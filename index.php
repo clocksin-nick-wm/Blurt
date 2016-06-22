@@ -147,24 +147,25 @@ foreach ($data as $row) {
 
     <div id="sideNav">
         <a href="profile.php">
-        <img class="img-circle person" src="https://beagamecharacter.com/wp-content/uploads/2013/02/Master-Chief-in-Halo-854x960.jpg" alt="Ash" width="200px" height="200px"/>
+        <img class="img-circle person" src="Billy%20Profile.jpg-large" alt="Ash" width="200px" height="200px"/>
         </a>
         <h1 style="color: black"><?php echo $_SESSION['username']?></h1>
 
         <?php
         $dbh = new PDO ('mysql:host=localhost;dbname=blurtdb', 'root', 'root');
-       $query2 = "SELECT description FROM users WHERE user_id = '". $_SESSION['user_id'] ."'";
+       $query2 = "SELECT description FROM users WHERE id = '". $_SESSION['user_id'] ."'";
         $stmt = $dbh->prepare($query2);
         $stmt -> execute();
         $result = $stmt -> fetchAll();
+
+
         foreach($result as $row1){
             ?>
-        <p style="color: black">thing here<?php echo $row1['description'] ?></p>
+        <p style="color: black"><?php echo $row1['description'] ?></p>
 
             <?php
         }
         ?>
-        <p>Halo Ruelz</p>
     </div>
 </body>
 </html>

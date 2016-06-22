@@ -154,7 +154,7 @@ if (isset($_POST['signup'])) {
             <br><br>
             <input type="text" name="last_name" placeholder="Last Name"/>
             <br><br>
-            <input type="tel" name="email" placeholder="Email"/>
+            <input type="email" name="email" placeholder="Email"/>
             <br><br>
             <input type="text" name="username" placeholder="Username"/>
             <br><br>
@@ -162,7 +162,13 @@ if (isset($_POST['signup'])) {
             <br><br>
             <input type="password" name="password2" placeholder="Retype password"/>
             <br><br>
+            <label style="background: white">Profile Pic</label>
+            <input type="file" name="profile_picture" placeholder="Profile Pic" />
+            <br>
+            <input type="text" placeholder="West-Mec Authentication Code" name="WMcode" />
+            <br><br>
             <input type="submit" name="signup" value="Submit"/>
+
         </fieldset>
 
     </form>
